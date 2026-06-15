@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kystens Kafé i Handelsparken Sortland — spesialkaffe, ferskt bakst, hjemmelagde kaker og italiensk iskrem med utsikt over fjorden. Velkommen inn!" />
+  <meta property="og:title" content="Kystens Kafé — Sortland" />
+  <meta property="og:description" content="Spesialkaffe, ferskt bakst og italiensk iskrem med fjordutsikt i Handelsparken Sortland." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="IMG_1444.jpg" />
+  <title>Kystens Kafé — Sortland, Nordland</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&family=Quicksand:wght@700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --terra:      #8B3A2A;
+      --terra-lt:   #B05A46;
+      --teal:       #40B8B0;
+      --teal-lt:    #D4F0EE;
+      
+      --beige:      #F5EDD8;
+      --beige-dk:   #EDE0C4;
+      --charcoal:   #2D2D2D;
+      --charcoal-dk:#1A1A1A;
+      --honey:      #C4935A;
+      --warm-white: #FDFAF4;
+      --cream:      #FDF8F0;
+      --text:       #2D2D2D;
+      --text-lt:    #7A6E66;
+      --radius:     10px;
+      --radius-lg:  16px;
+      --shadow:     0 4px 28px rgba(45,45,45,0.11);
+      --shadow-sm:  0 2px 12px rgba(45,45,45,0.07);
+      --shadow-terra: 0 4px 24px rgba(139,58,42,0.28);
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Lato', system-ui, sans-serif; color: var(--text); background: var(--warm-white); line-height: 1.65; }
+    h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; }
+    a { text-decoration: none; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: transparent;
+      border-bottom: 1px solid transparent;
+      height: 68px; padding: 0 6%;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background 0.35s, border-color 0.35s;
+    }
+    nav.scrolled { background: rgba(253,250,244,0.92); border-bottom-color: rgba(45,45,45,0.09); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo-img { height: 38px; width: auto; display: block; filter: brightness(0) invert(1); transition: filter 0.35s; }
+    nav.scrolled .nav-logo-img { filter: brightness(0); }
+    .nav-links { list-style: none; display: flex; gap: 34px; align-items: center; }
+    .nav-links a { color: rgba(255,255,255,0.88); font-size: 14px; font-weight: 600; letter-spacing: 0.02em; transition: color 0.2s; }
+    nav.scrolled .nav-links a { color: var(--text-lt); }
+    .nav-links a:hover { color: white; }
+    nav.scrolled .nav-links a:hover { color: var(--terra); }
+    .nav-links .cta { color: white !important; background: var(--terra); border: none; padding: 8px 20px; border-radius: var(--radius); font-weight: 700 !important; box-shadow: var(--shadow-terra); transition: background 0.2s !important; }
+    nav.scrolled .nav-links .cta { background: var(--terra); color: white !important; border: none; }
+    .nav-links .cta:hover { background: var(--terra-lt) !important; }
+    nav.scrolled .nav-links .cta:hover { background: var(--terra-lt) !important; }
+    .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; }
+    .burger span { display: block; width: 22px; height: 2px; background: white; border-radius: 2px; transition: background 0.35s; }
+    nav.scrolled .burger span { background: var(--charcoal); }
+    .mobile-nav { display: none; position: fixed; top: 68px; left: 0; right: 0; z-index: 199; background: var(--warm-white); border-bottom: 1px solid rgba(45,45,45,0.09); padding: 8px 6%; flex-direction: column; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { color: var(--text-lt); font-size: 16px; padding: 14px 0; border-bottom: 1px solid rgba(45,45,45,0.07); font-weight: 600; }
+    .mobile-nav a:last-child { border-bottom: none; }
+
+    /* ── HERO ── */
+    .hero { position: relative; height: 100vh; height: 100svh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background-image: url('iskaffe-fjord.webp'); background-size: cover; background-position: center; z-index: 0; filter: brightness(0.95) contrast(1.05) saturate(1.1); }
+    .hero-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.55) 100%); }
+    .hero-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 24px; padding: 0 6%; }
+    .hero-eyebrow { font-family: 'Lato', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.72); }
+    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(56px, 9vw, 112px); color: white; font-weight: 700; letter-spacing: -0.01em; text-transform: uppercase; line-height: 1.02; }
+    .hero-sub { font-size: 16px; color: rgba(255,255,255,0.78); max-width: 420px; margin: 0 auto; line-height: 1.65; }
+    .btn-hero { display: inline-block; color: white; background: var(--terra); border: none; padding: 16px 52px; font-family: 'Lato', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; border-radius: var(--radius); box-shadow: var(--shadow-terra); margin-top: 8px; transition: background 0.22s; }
+    .btn-hero:hover { background: var(--terra-lt); }
+
+    /* ── SHARED SECTION ── */
+    section { padding: 88px 8%; }
+    .s-label { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
+    .s-title { font-size: clamp(28px, 4vw, 44px); color: var(--charcoal); margin-bottom: 14px; line-height: 1.18; letter-spacing: -0.01em; }
+    .s-sub { font-size: 17px; color: var(--text-lt); max-width: 540px; line-height: 1.85; margin-bottom: 52px; }
+
+    /* ── HIGHLIGHTS ── */
+    #highlights { background: var(--warm-white); }
+    .hi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; align-items: stretch; }
+    .hi-card { background: white; border-radius: var(--radius-lg); overflow: hidden; transition: transform 0.22s; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; }
+    .hi-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .hi-card-img { width: 100%; aspect-ratio: 4/3; overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 58px; }
+    .hi-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+    .hi-card:hover .hi-card-img img { transform: scale(1.05); }
+    .hi-img-mosaic { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 2px; width: 100%; height: 100%; }
+    .hi-img-mosaic img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .hi-card-body { padding: 20px 22px 24px; text-align: center; flex: 1; }
+    .hi-chip { font-size: 10px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; display: block; }
+    .hi-title { font-size: 20px; color: var(--charcoal); margin-bottom: 10px; }
+    .hi-text { font-size: 14px; color: var(--text-lt); line-height: 1.75; }
+
+    /* ── MENU ── */
+    #menu { background: var(--beige); }
+    #menu .s-label { color: var(--teal); }
+    #menu .s-title { color: var(--charcoal); }
+    #menu .s-sub { color: var(--text-lt); }
+    .tabs-wrapper { margin-bottom: 40px; }
+    .tab-group-label { display: block; font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-lt); margin-bottom: 10px; }
+    .tab-group-divider { height: 1px; background: var(--beige-dk); margin: 14px 0; }
+    .tabs { display: flex; gap: 8px; border-bottom: none; overflow-x: auto; scrollbar-width: none; flex-wrap: nowrap; }
+    .tabs::-webkit-scrollbar { display: none; }
+    .tab-btn { background: white; color: var(--text-lt); border: 1px solid var(--beige-dk); border-radius: var(--radius); margin-bottom: 0; padding: 11px 22px; font-family: 'Lato', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; white-space: nowrap; flex-shrink: 0; transition: all 0.18s; }
+    .tab-btn.on { background: var(--terra); color: white; border-color: var(--terra); box-shadow: 0 3px 16px rgba(139,58,42,0.5); transform: translateY(-2px); }
+    .tab-btn:hover:not(.on) { background: var(--beige-dk); color: var(--charcoal); border-color: var(--beige-dk); }
+    .tab-panel { display: none; }
+    .tab-panel.on { display: block; background: white; border: 1px solid var(--beige-dk); border-radius: var(--radius); }
+    #menu .ml { padding: 0 28px; }
+    #menu .ml-item { border-bottom-color: var(--beige-dk); padding: 20px 0; }
+    #menu .ml-name { color: var(--charcoal); }
+    #menu .ml-desc { color: var(--text-lt); }
+    #menu .ml-price { color: var(--terra); font-size: 16px; }
+
+    .menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 24px; align-items: start; }
+    .mi { background: white; border-radius: var(--radius-lg); overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; box-shadow: var(--shadow-sm); }
+    .mi:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .mi-img { width: 100%; aspect-ratio: 4/3; overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 52px; }
+    .mi-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+    .mi:hover .mi-img img { transform: scale(1.05); }
+    .mi-body { padding: 16px 20px 20px; text-align: center; }
+    .mi-meta { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-lt); margin-bottom: 6px; }
+    .mi-name { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--charcoal); font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
+    .mi-desc { font-size: 13px; color: var(--text-lt); line-height: 1.65; margin-bottom: 12px; }
+    .mi-price-link { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: var(--terra); border-bottom: 1px solid var(--terra); padding-bottom: 1px; display: inline-block; }
+
+    /* ice cream */
+    .ice-wrap { background: var(--beige); border-radius: 0 0 var(--radius) var(--radius); padding: 28px 28px 32px; margin-top: 0; box-shadow: none; border-top: 1px solid var(--beige-dk); }
+    .ice-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; margin-bottom: 6px; }
+    .ice-header h3 { font-size: 22px; color: var(--charcoal); }
+    .ice-price-badge { background: var(--terra); color: white; padding: 7px 20px; border-radius: var(--radius); font-size: 14px; font-weight: 700; }
+    .ice-sub { font-size: 14px; color: var(--text-lt); font-style: italic; margin-bottom: 28px; }
+    .ice-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .ice-col h4 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--charcoal); margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid var(--beige-dk); }
+    .ice-col ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+    .ice-col li { font-size: 14px; color: var(--text-lt); padding-left: 14px; position: relative; }
+    .ice-col li::before { content: '·'; position: absolute; left: 0; color: var(--terra); font-weight: 700; }
+
+    /* ── GALLERY ── */
+    #gallery { background: var(--warm-white); padding-top: 0; }
+    .gallery-scroll {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 16px;
+      scrollbar-width: none;
+      cursor: grab;
+    }
+    .gallery-scroll:active { cursor: grabbing; }
+    .gallery-scroll::-webkit-scrollbar { display: none; }
+    .gallery-scroll img {
+      height: 320px;
+      width: auto;
+      flex-shrink: 0;
+      border-radius: var(--radius);
+      scroll-snap-align: start;
+      object-fit: cover;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
+    }
+    .gallery-scroll img:hover {
+      transform: scale(1.02);
+      box-shadow: var(--shadow);
+    }
+    .gallery-scroll-hint {
+      font-size: 12px;
+      color: var(--text-lt);
+      margin-bottom: 14px;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── STORY ── */
+    #story { background: var(--beige); padding-top: 48px; }
+    .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: flex-start; }
+    .story-img-wrap { aspect-ratio: 4/3.2; border-radius: var(--radius-lg); box-shadow: var(--shadow); position: relative; overflow: hidden; }
+    .story-img-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block; }
+    .gallery-scroll img { object-position: center top; }
+    .dream-badge { position: absolute; top: 22px; right: 22px; width: 80px; height: 80px; background: var(--terra); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(139,58,42,0.45); z-index: 2; text-align: center; line-height: 1.2; }
+    .dream-badge strong { font-family: 'Playfair Display', serif; font-size: 26px; color: white; display: block; }
+    .dream-badge span { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.85); }
+    .story-owners { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 20px; }
+    .story-text p { font-size: 16px; color: var(--text-lt); line-height: 1.85; margin-bottom: 16px; }
+    .story-text p:last-child { margin-bottom: 0; }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--warm-white); }
+    .contact-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 24px; align-items: start; }
+    .cc { background: white; border-radius: var(--radius-lg); padding: 36px 28px; text-align: center; border-top: 3px solid var(--teal); box-shadow: var(--shadow-sm); }
+    .cc-icon { display: block; margin: 0 auto 18px; color: var(--charcoal); }
+    .cc h3 { font-size: 19px; color: var(--charcoal); margin-bottom: 14px; }
+    .cc address, .cc p { font-size: 15px; color: var(--text-lt); font-style: normal; line-height: 1.8; }
+    .cc a { color: var(--terra); }
+    .cc a:hover { text-decoration: underline; }
+    .ch-row { display: flex; justify-content: space-between; font-size: 14px; padding: 7px 0; border-bottom: 1px solid var(--beige-dk); }
+    .ch-row:last-child { border: none; }
+    .ch-row .d { color: var(--text-lt); }
+    .ch-row .t { font-weight: 700; color: var(--charcoal); }
+    .cc-right { display: flex; flex-direction: column; gap: 24px; }
+    .cc-map-wrap { margin-top: 20px; border-radius: var(--radius); overflow: hidden; line-height: 0; }
+    .cc-map-wrap iframe { width: 100%; height: 260px; display: block; border: 0; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--charcoal-dk); color: rgba(255,255,255,0.5); padding: 52px 8% 30px; }
+    .footer-top { display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 28px; }
+    .footer-brand .fl { font-family: 'Playfair Display', Georgia, serif; font-size: 20px; color: white; font-weight: 700; margin-bottom: 8px; }
+    .footer-brand p { font-size: 13px; }
+    .footer-brand .tagline { color: var(--teal); font-style: italic; }
+    .fl-col h4 { color: white; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 14px; }
+    .fl-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .fl-col a { color: rgba(255,255,255,0.5); font-size: 13px; transition: color 0.2s; }
+    .fl-col a:hover { color: var(--terra); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 12px; }
+    .footer-bottom .heart { color: var(--terra); }
+
+    /* ── ANIMATIONS ── */
+    .fu { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fu.vis { opacity: 1; transform: translateY(0); }
+    .fu.d1 { transition-delay: 0.10s; }
+    .fu.d2 { transition-delay: 0.20s; }
+    .fu.d3 { transition-delay: 0.30s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .hi-grid { grid-template-columns: repeat(2, 1fr); }
+      .ice-cols { grid-template-columns: 1fr; }
+      .story-grid { grid-template-columns: 1fr; gap: 36px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .cc-map-wrap iframe { height: 220px; }
+      .gallery-masonry { columns: 2; }
+    }
+    @media (max-width: 680px) {
+      .nav-links { display: none; }
+      .burger { display: flex; }
+      .hi-grid { grid-template-columns: 1fr; }
+      section { padding: 60px 6%; }
+      .gallery-masonry { columns: 2; column-gap: 10px; }
+      .gallery-masonry img { margin-bottom: 10px; }
+      .footer-top { flex-direction: column; gap: 28px; }
+    }
+
+    /* ── TILBAKEMELDING ── */
+    .btn-feedback { display: inline-block; background: var(--terra); color: white; padding: 15px 36px; border-radius: var(--radius); font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; box-shadow: var(--shadow-terra); transition: background 0.2s, transform 0.15s; }
+    .btn-feedback:hover { background: var(--terra-lt); transform: translateY(-2px); }
+
+    /* ── BILDE TOGGLE ── */
+    .img-toggle-btn {
+      background: transparent;
+      border: 1px solid var(--text-lt);
+      color: var(--text-lt);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: var(--radius);
+      cursor: pointer;
+      font-family: 'Lato', sans-serif;
+      transition: all 0.2s;
+      margin-top: 16px;
+      display: inline-block;
+    }
+    .img-toggle-btn:hover { border-color: var(--terra); color: var(--terra); }
+    .img-toggle-content { display: none; margin-top: 12px; }
+    .img-toggle-content.open { display: block; }
+    .img-toggle-content img { max-width: 100%; border-radius: var(--radius); box-shadow: var(--shadow-sm); display: block; }
+
+    /* ── MENU LISTE ── */
+    .ml { display: flex; flex-direction: column; }
+    .ml-item { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--beige-dk); }
+    .ml-item:last-child { border-bottom: none; }
+    .ml-info { flex: 1; }
+    .ml-name { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--charcoal); font-weight: 600; margin-bottom: 5px; line-height: 1.3; }
+    .ml-desc { font-size: 13px; color: var(--text-lt); line-height: 1.65; }
+    .ml-price { font-weight: 700; color: var(--terra); font-size: 15px; white-space: nowrap; font-family: 'Lato', sans-serif; padding-top: 2px; }
+
+    /* ── TAKEAWAY KNAPP ── */
+    .nav-links .cta-takeaway { color: white !important; background: var(--teal); border: none; padding: 8px 20px; border-radius: var(--radius); font-weight: 700 !important; transition: background 0.2s !important; }
+    nav.scrolled .nav-links .cta-takeaway { background: var(--teal); color: white !important; }
+    .nav-links .cta-takeaway:hover { background: #34a09a !important; color: white !important; }
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-top: 8px; }
+    .hero-btns .btn-hero { margin-top: 0; }
+    .btn-hero-outline { display: inline-block; color: white; background: transparent; border: 2px solid rgba(255,255,255,0.75); padding: 15px 36px; font-family: 'Lato', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; border-radius: var(--radius); transition: background 0.22s, border-color 0.22s; }
+    .btn-hero-outline:hover { background: rgba(255,255,255,0.15); border-color: white; }
+    .mobile-nav .cta-takeaway-mob { color: var(--terra) !important; font-weight: 700; }
+
+    /* ── SKJEMA ── */
+    .form-card { background: white; border-radius: var(--radius-lg); padding: 40px; box-shadow: var(--shadow); max-width: 640px; }
+    .form-group { margin-bottom: 20px; }
+    .form-label { display: block; font-size: 13px; font-weight: 700; color: var(--charcoal); margin-bottom: 7px; letter-spacing: 0.04em; }
+    .form-input, .form-textarea { width: 100%; padding: 12px 16px; border: 1.5px solid var(--beige-dk); border-radius: var(--radius); font-family: 'Lato', sans-serif; font-size: 15px; color: var(--charcoal); background: white; transition: border-color 0.2s; }
+    .form-input:focus, .form-textarea:focus { outline: none; border-color: var(--teal); box-shadow: 0 0 0 3px rgba(64,184,176,0.12); }
+    .form-textarea { resize: vertical; min-height: 90px; }
+    .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .btn-form { background: var(--terra); color: white; border: none; padding: 14px 40px; border-radius: var(--radius); font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; box-shadow: var(--shadow-terra); transition: background 0.2s; }
+    .btn-form:hover { background: var(--terra-lt); }
+    .form-note { font-size: 12px; color: var(--text-lt); margin-top: 12px; line-height: 1.6; }
+    .form-success { display: none; background: var(--teal-lt); border: 1.5px solid var(--teal); border-radius: var(--radius); padding: 14px 18px; margin-top: 14px; color: var(--charcoal); font-size: 14px; font-weight: 600; }
+
+    /* ── STJERNEBEDØMMELSE ── */
+    .star-group { display: flex; flex-direction: row-reverse; gap: 2px; margin-bottom: 4px; }
+    .star-group input[type=radio] { display: none; }
+    .star-group label { font-size: 32px; color: var(--beige-dk); cursor: pointer; transition: color 0.15s; line-height: 1; }
+    .star-group input:checked ~ label, .star-group label:hover, .star-group label:hover ~ label { color: var(--honey); }
+
+    @media (max-width: 680px) {
+      .form-grid-2 { grid-template-columns: 1fr; }
+      .form-card { padding: 24px 18px; }
+      .hero-btns { flex-direction: column; align-items: center; }
+    }
+
+    /* ── MODAL ── */
+    .modal-overlay { display: flex; position: fixed; inset: 0; z-index: 400; background: rgba(45,45,45,0.6); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); align-items: center; justify-content: center; padding: 24px; opacity: 0; pointer-events: none; transition: opacity 0.25s; }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal-box { background: var(--cream); border-radius: var(--radius-lg); max-width: 880px; width: 100%; max-height: 88vh; overflow-y: auto; padding: 52px 48px 48px; position: relative; box-shadow: 0 24px 64px rgba(45,45,45,0.28); transform: translateY(18px); transition: transform 0.25s; }
+    .modal-overlay.open .modal-box { transform: translateY(0); }
+    .modal-close { position: absolute; top: 18px; right: 18px; background: transparent; border: 1.5px solid var(--beige-dk); color: var(--text-lt); font-size: 16px; cursor: pointer; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: background 0.2s, color 0.2s, border-color 0.2s; font-family: 'Lato', sans-serif; }
+    .modal-close:hover { background: var(--beige-dk); color: var(--charcoal); border-color: var(--beige-dk); }
+    .modal-family-footer { font-family: 'Playfair Display', Georgia, serif; font-style: italic; color: var(--text-lt); font-size: 17px; text-align: center; max-width: 580px; margin: 44px auto 0; line-height: 1.85; }
+    .family-badge { cursor: pointer; }
+    .family-badge:hover { opacity: 0.82; }
+    @media (max-width: 680px) { .modal-box { padding: 40px 20px 32px; } }
+
+    /* ── SPRÅKVELGER ── */
+    .lang-sw { display: flex; gap: 4px; margin-right: 12px; }
+    .lang-btn { background: transparent; border: 1px solid rgba(255,255,255,0.45); color: rgba(255,255,255,0.8); font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; padding: 5px 10px; border-radius: 6px; cursor: pointer; transition: all 0.2s; }
+    nav.scrolled .lang-btn { border-color: rgba(45,45,45,0.25); color: var(--text-lt); }
+    .lang-btn.active { background: white; color: var(--charcoal) !important; border-color: white; }
+    nav.scrolled .lang-btn.active { background: var(--charcoal); color: white !important; border-color: var(--charcoal); }
+    .lang-btn:hover:not(.active) { background: rgba(255,255,255,0.15); color: white; border-color: rgba(255,255,255,0.7); }
+    nav.scrolled .lang-btn:hover:not(.active) { background: var(--beige); color: var(--charcoal); }
+    @media (max-width: 680px) { .lang-sw { margin-right: 8px; } }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-logo">
+    <img src="Kystens-Kafe_Lang_2D.png" alt="Kystens Kafé" class="nav-logo-img">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#menu" data-i18n="nav-menu">Meny</a></li>
+    <li><a href="#story" data-i18n="nav-story">Om oss</a></li>
+    <li><a href="#gallery" data-i18n="nav-gallery">Galleri</a></li>
+    <li><a href="tel:+4790291012" data-i18n="nav-takeaway">Bestill takeaway</a></li>
+    <li><a href="#contact" class="cta" data-i18n="nav-contact">Finn oss</a></li>
+  </ul>
+  <div class="lang-sw">
+    <button class="lang-btn active" id="btn-no" onclick="setLang('no')">NO</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" id="btn-de" onclick="setLang('de')">DE</button>
+  </div>
+  <div class="burger" id="burger" role="button" tabindex="0" aria-label="Åpne meny">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mob-nav">
+  <a href="#menu"    onclick="closeMob()" data-i18n="mob-menu">Meny</a>
+  <a href="#story"   onclick="closeMob()" data-i18n="mob-story">Om oss</a>
+  <a href="#gallery" onclick="closeMob()" data-i18n="mob-gallery">Galleri</a>
+  <a href="#" onclick="closeMob(); openReservasjonModal(); return false;" data-i18n="mob-reservasjon">Reserver bord</a>
+  <a href="tel:+4790291012" onclick="closeMob()" data-i18n="mob-takeaway">Bestill takeaway</a>
+  <a href="#contact" onclick="closeMob()" data-i18n="mob-contact">Finn oss</a>
+</div>
+
+<!-- HERO -->
+<div class="hero" id="home">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow" data-i18n="hero-eyebrow">Kystens Kafé · Sortland</p>
+    <h1 class="hero-title" data-i18n="hero-title">Smak av kysten</h1>
+    <p class="hero-sub" data-i18n="hero-sub">Ferskt laget mat og kaffe midt i hjertet av Vesterålen.</p>
+    <div class="hero-btns">
+      <a href="#menu" class="btn-hero" data-i18n="hero-btn-menu">Se menyen</a>
+      <a href="tel:+4790291012" class="btn-hero-outline" data-i18n="hero-btn-takeaway">Bestill takeaway</a>
+    </div>
+  </div>
+</div>
+
+<!-- HIGHLIGHTS -->
+<section id="highlights">
+  <p class="s-label" data-i18n="hi-label">Hva vi tilbyr</p>
+  <h2 class="s-title" data-i18n="hi-title">Noe for enhver smak</h2>
+  <p class="s-sub" data-i18n="hi-sub">Vi lager alt med kjærlighet og ferske råvarer. Enten du trenger kaffe, en mettende lunsj eller noe søtt — du er alltid hjertelig velkommen.</p>
+  <div class="hi-grid">
+    <div class="hi-card fu">
+      <div class="hi-card-img"><img src="espressomaskin.webp" alt="Spesialkaffe — La Marzocco"></div>
+      <div class="hi-card-body">
+        <span class="hi-chip">Nyhet!</span>
+        <h3 class="hi-title">Ny kaffemaskin</h3>
+        <p class="hi-text">Vi har nettopp investert i en splitter ny kaffemaskin — noe som betyr enda bedre kaffe til deg. Kom inn og smak forskjellen selv!</p>
+      </div>
+    </div>
+    <div class="hi-card fu d1">
+      <div class="hi-card-img">
+        <img src="brødbilde.webp" alt="Ferskt brød">
+      </div>
+      <div class="hi-card-body">
+        <span class="hi-chip" data-i18n="hi-chip-2">Daglig fersk</span>
+        <h3 class="hi-title" data-i18n="hi-h-2">Ferskt bakst</h3>
+        <p class="hi-text" data-i18n="hi-t-2">Croissanter, focaccia, horn og rundstykker — bakt og fylt med de beste ingrediensene. Ferskt levert hver eneste dag.</p>
+      </div>
+    </div>
+    <div class="hi-card fu d2">
+      <div class="hi-card-img hi-img-mosaic">
+        <img src="IMG_1544.webp"     alt="Mangokake">
+        <img src="ostekake.webp"      alt="Ostekake">
+        <img src="kokoskake-disk.webp" alt="Kokosnøttkake">
+        <img src="iskrem.webp"        alt="Iskrem">
+      </div>
+      <div class="hi-card-body">
+        <span class="hi-chip" data-i18n="hi-chip-3">Italiensk kvalitet</span>
+        <h3 class="hi-title" data-i18n="hi-h-3">Kaker &amp; Iskrem</h3>
+        <p class="hi-text" data-i18n="hi-t-3">Hjemmelagde kaker og ekte italiensk iskrem fra IL Primo — laget etter originale italienske oppskrifter med 11 smaksvarianter.</p>
+      </div>
+    </div>
+    <div class="hi-card fu d3" onclick="openFamilyModal()" role="button" tabindex="0" style="cursor:pointer;">
+      <div class="hi-card-img">
+        <img src="IMG_1431.webp" alt="Familievennlig — lekeområde for barn">
+      </div>
+      <div class="hi-card-body">
+        <span class="hi-chip">Familievennlig</span>
+        <h3 class="hi-title">For barnefamilier</h3>
+        <p class="hi-text">Lekeområde, barnestoler, stellebord og god plass til barnevogner — vi har tenkt på hele familien.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <p class="s-label" data-i18n="menu-label">Vår meny</p>
+  <h2 class="s-title" data-i18n="menu-title">Smak av kysten</h2>
+  <p class="s-sub" data-i18n="menu-sub">Alt laget ferskt — fra enkle smørbrød til varme retter med internasjonale smaker, salater og iskrem som smelter på tungen.</p>
+
+  <div class="tabs-wrapper">
+    <div class="tabs">
+      <button class="tab-btn on" data-t="mat">🍽️ Mat</button>
+      <button class="tab-btn" data-t="drikke">🥤 Drikke</button>
+      <button class="tab-btn" data-t="bakst">🥖 Bakst</button>
+      <button class="tab-btn" data-t="sott">🍰 Søtt</button>
+      <button class="tab-btn" data-t="kaffe-is">🍦 Iskrem</button>
+    </div>
+  </div>
+
+  <!-- Mat -->
+  <div class="tab-panel on" id="tp-mat">
+    <div class="hotfood-heading" style="margin-bottom:8px;padding:20px 28px 16px;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;color:var(--terra);margin-bottom:4px;" data-i18n="menu-hotfood-label">Varmretter</div>
+      <div style="font-size:13px;color:var(--text-lt);" data-i18n="menu-hotfood-sub">Lages på bestilling — spør gjerne om dagens tilbud</div>
+    </div>
+    <div class="ml">
+      <div class="ml-item">
+        <div class="ml-info">
+          <div class="ml-name" data-i18n="mi-enchiladas-beef">Beef Enchiladas Supremo</div>
+          <div class="ml-desc" data-i18n="md-enchiladas-beef">2 enchiladas fylt med storfekjøtt, sorte bønner og mais. Toppet med salsa roja, gratinert med cheddar og mozzarella. Serveres med rømme, syltet rødløk og sidesalat.</div>
+        </div>
+        <div class="ml-price">Kr 229,-</div>
+      </div>
+      <div class="ml-item">
+        <div class="ml-info">
+          <div class="ml-name" data-i18n="mi-enchiladas-pollo">Enchiladas de Pollo Supremo</div>
+          <div class="ml-desc" data-i18n="md-enchiladas-pollo">2 enchiladas fylt med kylling, sorte bønner og mais. Toppet med salsa roja, gratinert med cheddar og mozzarella. Serveres med rømme, syltet rødløk og sidesalat.</div>
+        </div>
+        <div class="ml-price">Kr 239,-</div>
+      </div>
+      <div class="ml-item">
+        <div class="ml-info">
+          <div class="ml-name" data-i18n="mi-kystens-salat">Kystens Salat</div>
+          <div class="ml-desc" data-i18n="md-kystens-salat">Kylling, feta, egg, grønnsaker og krutonger. Serveres med brød og smør.</div>
+        </div>
+        <div class="ml-price">Kr 239,-</div>
+      </div>
+      <div class="ml-item">
+        <div class="ml-info">
+          <div class="ml-name" data-i18n="mi-fitness-salat">Fitness Salat</div>
+          <div class="ml-desc" data-i18n="md-fitness-salat">Kylling, mango, ananas, grønnsaker og krutonger. Serveres med brød og smør.</div>
+        </div>
+        <div class="ml-price">Kr 249,-</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Drikke -->
+  <div class="tab-panel" id="tp-drikke">
+    <div class="ml">
+      <div class="ml-item">
+        <div class="ml-info">
+          <div class="ml-name" data-i18n="mi-juice">Juice &amp; Brus</div>
+          <div class="ml-desc" data-i18n="md-juice">Ferskpresset appelsinjuice, eplejuice og utvalg av brus.</div>
+        </div>
+        <div class="ml-price">fra Kr 35,-</div>
+      </div>
+      <div class="ml-item">
+        <div class="ml-info">
+          <div class="ml-name">Spesialkaffe</div>
+          <div class="ml-desc">Vi lager spesialkaffe på vår La Marzocco maskin — alltid nylaget med kvalitetsbønner. Prøv vår cappuccino, latte eller flat white.</div>
+        </div>
+        <div class="ml-price">fra Kr 39,-</div>
+      </div>
+      <div class="ml-item">
+        <div class="ml-info">
+          <div class="ml-name" data-i18n="mi-kakao">Varm Kakao</div>
+          <div class="ml-desc" data-i18n="md-kakao">Rik og kremet varm sjokolade — god for store og små.</div>
+        </div>
+        <div class="ml-price">Kr 49,-</div>
+      </div>
+      <div class="ml-item">
+        <div class="ml-info">
+          <div class="ml-name" data-i18n="mi-te">Te</div>
+          <div class="ml-desc" data-i18n="md-te">Utvalg av svart te, grønn te, ingefær og frukt. Spør om dagens utvalg.</div>
+        </div>
+        <div class="ml-price">Kr 39,-</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bakst -->
+  <div class="tab-panel" id="tp-bakst">
+    <div class="ml">
+      <div class="ml-item">
+        <div class="ml-info">
+          <div class="ml-name" data-i18n="mi-focaccia">Focaccia</div>
+          <div class="ml-desc" data-i18n="md-focaccia">Mozzarella, tomat og pesto.</div>
+        </div>
+        <div class="ml-price">Kr 119,-</div>
+      </div>
+      <div class="ml-item">
+        <div class="ml-info">
+          <div class="ml-name" data-i18n="mi-rundstykke">Rundstykke</div>
+          <div class="ml-desc" data-i18n="md-rundstykke">Skinke, ost og egg.</div>
+        </div>
+        <div class="ml-price">Kr 69,-</div>
+      </div>
+      <div class="ml-item">
+        <div class="ml-info">
+          <div class="ml-name" data-i18n="mi-horn">Stort Horn</div>
+          <div class="ml-desc" data-i18n="md-horn">Ost og skinke.</div>
+        </div>
+        <div class="ml-price">Kr 95,-</div>
+      </div>
+      <div class="ml-item">
+        <div class="ml-info">
+          <div class="ml-name" data-i18n="mi-croissant">Croissant</div>
+          <div class="ml-desc" data-i18n="md-croissant">Skinke og ost.</div>
+        </div>
+        <div class="ml-price">Kr 69,-</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Søtt -->
+  <div class="tab-panel" id="tp-sott">
+    <div class="ml">
+      <div class="ml-item">
+        <div class="ml-info">
+          <div class="ml-name">Dagens kaker</div>
+          <div class="ml-desc">Vi har alltid et stort utvalg av hjemmelagde kaker som varierer fra dag til dag — alt fra sjokoladekake og ostekake til fruktfat og sesongkaker. Spør oss gjerne hva som er ferskt i dag!</div>
+        </div>
+        <div class="ml-price">Kr 59,-</div>
+      </div>
+      <div class="ml-item">
+        <div class="ml-info">
+          <div class="ml-name" data-i18n="mi-kanelbolle">Kanelbolle</div>
+          <div class="ml-desc" data-i18n="md-kanelbolle">Ferskt bakt kanelbolle med kardemomme — varm rett fra ovnen.</div>
+        </div>
+        <div class="ml-price">Kr 39,-</div>
+      </div>
+      <div class="ml-item">
+        <div class="ml-info">
+          <div class="ml-name" data-i18n="mi-brownie">Brownie</div>
+          <div class="ml-desc" data-i18n="md-brownie">Tett, fuktig sjokoladebrownie — nybakt og uimotståelig.</div>
+        </div>
+        <div class="ml-price">Kr 49,-</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Kaffe & Iskrem -->
+  <div class="tab-panel" id="tp-kaffe-is">
+    <div class="ice-wrap">
+      <div class="ice-header" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+        <h3 data-i18n="ice-title">Iskrem, Frozen Yoghurt &amp; Sorbet</h3>
+        <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+          <button class="img-toggle-btn"
+            onclick="toggleImg('ilprimo-img', this)"
+            style="background:var(--terra); color:white; border:none; padding:9px 18px; border-radius:var(--radius); font-family:'Lato',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; box-shadow:var(--shadow-terra); transition:background 0.2s; margin:0;">
+            🍦 Vis sortiment
+          </button>
+          <div class="ice-price-badge">fra 59,-</div>
+        </div>
+      </div>
+      <div class="img-toggle-content" id="ilprimo-img">
+        <img src="isbilde.webp"
+        alt="IL Primo iskrem sortiment"
+        style="width:100%;max-width:600px;
+        border-radius:var(--radius);
+        margin-top:12px;
+        box-shadow:var(--shadow-sm);">
+      </div>
+      <p class="ice-sub" data-i18n="ice-sub">IL Primo — laget etter originale italienske oppskrifter</p>
+    </div>
+  </div>
+
+</section>
+<!-- STORY -->
+<section id="story">
+  <div class="story-grid">
+    <div class="story-img-wrap fu">
+      <img src="IMG_1539.webp" alt="Katerina og Tim på Kystens Kafé">
+      <div class="dream-badge"><strong>15</strong><span>års<br>drøm</span></div>
+    </div>
+    <div class="story-text fu d1">
+      <p class="s-label" data-i18n="story-label">Vår historie</p>
+      <h2 class="s-title" style="margin-bottom:6px;" data-i18n="story-title">En drøm ved havet</h2>
+      <p class="story-owners" data-i18n="story-owners">Katerina &amp; Tim</p>
+      <p data-i18n="story-p1">I mange år drømte Katerina og Tim om dette — et sted der folk kunne komme inn, puste ut, og kjenne at de var velkomne. Et sted der kaffen alltid er nylaget, maten er laget med hjertet, og smilet er ekte.</p>
+      <p data-i18n="story-p2">Sortland ble stedet. Med fjordene like utenfor og midnattssolen som bader byen i gull om sommeren, fantes det ingen bedre plass å slå røtter. Her, midt i hjertet av Vesterålen, åpnet de endelig dørene til Kystens Kafé.</p>
+      <p data-i18n="story-p3">Hos oss handler det ikke bare om mat og kaffe — det handler om å skape øyeblikk. Mellom venner. Mellom fremmede som blir kjente. Mellom den travle hverdagen og et pusterom ved kysten.</p>
+      <p><em style="color:var(--terra);" data-i18n="story-p4">Takk for at du er her. Nyt det, ta den tiden du trenger.</em></p>
+    </div>
+  </div>
+</section>
+
+
+<!-- GALLERY -->
+<section id="gallery">
+  <p class="s-label" data-i18n="gal-label">Galleri</p>
+  <h2 class="s-title" data-i18n="gal-title">Et innblikk i hverdagen vår</h2>
+  <div class="gallery-scroll" id="galleryScroll">
+    <img src="interior-lounge-fjord.webp" alt="Loungeområdet" loading="lazy">
+    <img src="espressomaskin.webp" alt="Espressomaskin" loading="lazy">
+    <img src="salat-egg.webp" alt="Salat" loading="lazy">
+    <img src="interior-baas.webp" alt="Båsene" loading="lazy">
+    <img src="kakebord.webp" alt="Kakebord" loading="lazy">
+    <img src="IMG_1585.webp" alt="Teamet på Kystens Kafé" loading="lazy">
+    <img src="interior-mosevegg.webp" alt="Mosevegg" loading="lazy">
+    <img src="iskaffe-fjord.webp" alt="Iskaffe med fjordutsikt" loading="lazy">
+    <img src="IMG_1544.webp" alt="Mandelkake" loading="lazy">
+    <img src="interior-vindusrekke.webp" alt="Vindusrekken" loading="lazy">
+    <img src="iskrem.webp" alt="Iskrem" loading="lazy">
+    <img src="ostekake.webp" alt="Ostekake" loading="lazy">
+    <img src="salat-kylling.webp" alt="Salat med kylling" loading="lazy">
+    <img src="kokoskake-disk.webp" alt="Kokoskake" loading="lazy">
+    <img src="salat-og-brod.webp" alt="Salat og brød" loading="lazy">
+    <img src="lekeomrade.webp" alt="Lekeområdet" loading="lazy">
+    <img src="ferskt-brod.webp" alt="Ferskt brød" loading="lazy">
+    <img src="IMG_1447.webp" alt="Interiør" loading="lazy">
+  </div>
+  <p class="gallery-scroll-hint" style="text-align:center;margin-top:12px;">
+    ← Sveip eller scroll for å se mer →
+  </p>
+</section>
+
+<!-- TILBAKEMELDING -->
+<section id="tilbakemelding" style="
+  background: var(--beige);
+  padding: 40px 8%;
+  text-align: center;
+  border-top: 1px solid var(--beige-dk);
+  border-bottom: 1px solid var(--beige-dk);">
+
+  <p style="font-size:13px;font-weight:700;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:8px;">
+    Din mening
+  </p>
+
+  <h2 style="font-family:'Playfair Display',serif;
+  font-size:26px;color:var(--charcoal);
+  margin-bottom:10px;">
+    Hva synes du om besøket?
+  </h2>
+
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSc8CB24GBg_iWL8n_c8BH0tKphBY0ISe2aCo0oKQ5hfCX0uUw/viewform"
+     target="_blank"
+     rel="noopener"
+     class="btn-feedback"
+     style="margin-top:16px;display:inline-block;">
+    Gi tilbakemelding →
+  </a>
+
+  <p style="font-size:12px;color:var(--text-lt);
+  margin-top:12px;">
+    Tar ca. 1 minutt — helt anonymt
+  </p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="s-label" data-i18n="contact-label">Besøk oss</p>
+  <h2 class="s-title" data-i18n="contact-title">Vi gleder oss til å se deg!</h2>
+  <p class="s-sub" data-i18n="contact-sub">Enten du er lokalbefolkning eller turist på vei gjennom Vesterålen — stikk innom. Du er alltid hjertelig velkommen.</p>
+  <div class="contact-grid">
+
+    <!-- Left: adresse + kart -->
+    <div class="cc fu">
+      <span class="cc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+      <h3 data-i18n="cc-address-h">Adresse</h3>
+      <address>Handelsparken Sortland<br>Sjøgata 30<br>8400 Sortland<br>Nordland, Norge</address>
+      <div class="cc-map-wrap">
+        <iframe
+          src="https://maps.google.com/maps?q=Sj%C3%B8gata+30%2C+8400+Sortland%2C+Norge&output=embed&hl=no&z=16"
+          title="Kystens Kafé på Google Maps"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Right: åpningstider + kontakt stacked -->
+    <div class="cc-right">
+      <div class="cc fu d1">
+        <span class="cc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+        <h3 data-i18n="cc-hours-h">Åpningstider</h3>
+        <div>
+          <div class="ch-row"><span class="d" data-i18n="cc-weekday">Mandag – fredag</span><span class="t">10:00 – 19:00</span></div>
+          <div class="ch-row"><span class="d" data-i18n="cc-weekend">Lørdag</span><span class="t">10:00 – 16:00</span></div>
+          <div class="ch-row"><span class="d" data-i18n="cc-sunday">Søndag</span><span class="t" data-i18n="cc-sunday-closed">Stengt</span></div>
+        </div>
+      </div>
+      <div class="cc fu d2">
+        <span class="cc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 12a19.79 19.79 0 0 1-3.07-8.67 2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+        <h3 data-i18n="cc-contact-h">Kontakt</h3>
+        <p>
+          <a href="tel:+4790291012">+47 902 91 012</a><br>
+          <a href="mailto:kontakt@kystenskafe.no">kontakt@kystenskafe.no</a><br><br>
+          <a href="https://www.facebook.com/kystenskafe/" target="_blank" rel="noopener" data-i18n="fb-link">Følg oss på Facebook →</a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MODAL: FOR BARNEFAMILIER -->
+<div class="modal-overlay" id="modal-family" onclick="closeFamilyModal(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeFamilyModal()" aria-label="Lukk">✕</button>
+    <p class="s-label">Familievennlig</p>
+    <h2 class="s-title" style="margin-bottom:14px;">For barnefamilier</h2>
+    <p class="s-sub">Vi ønsker alle hjertelig velkommen — store som små. Hos oss er det god plass og god stemning for hele familien.</p>
+    <div class="hi-grid" style="grid-template-columns: repeat(2, 1fr);">
+      <div class="hi-card">
+        <div class="hi-card-img"><img src="IMG_1431.webp" alt="Barnebord og lekeområde"></div>
+        <div class="hi-card-body">
+          <h3 class="hi-title">Lekeområde</h3>
+          <p class="hi-text">Vi har et eget lite lekeområde med bord og benker, tegnesaker og Lego — så de minste har noe å holde på med mens dere slapper av.</p>
+        </div>
+      </div>
+      <div class="hi-card">
+        <div class="hi-card-img">
+          <img src="IMG_1450.webp" alt="Barnestoler">
+        </div>
+        <div class="hi-card-body">
+          <h3 class="hi-title">Praktisk informasjon</h3>
+          <p class="hi-text">Vi har barnestoler og god plass til barnevogner. Trenger du å varme opp medbrakt mat eller flaske? Bare spør — vi hjelper gjerne.</p>
+        </div>
+      </div>
+      <div class="hi-card">
+        <div class="hi-card-img">
+          <img src="isbilde.webp" alt="IL Primo iskrem">
+        </div>
+        <div class="hi-card-body">
+          <h3 class="hi-title">Noe for barna</h3>
+          <p class="hi-text">Vi har ekte italiensk iskrem fra IL Primo med over 11 smaker, i tillegg til isbeger og spaghettiis — en favoritt blant de minste.</p>
+        </div>
+      </div>
+      <div class="hi-card">
+        <div class="hi-card-img">
+          <img src="IMG_1525.webp" alt="Stellebord">
+        </div>
+        <div class="hi-card-body">
+          <h3 class="hi-title">Stellebord</h3>
+          <p class="hi-text">Vi har stellebord tilgjengelig — så du kan ta deg av de minste uten å måtte forlate kaféen. Spør personalet så hjelper vi deg.</p>
+        </div>
+      </div>
+    </div>
+    <p class="modal-family-footer">Kystens Kafé er et sted for hele familien. Ta med ungene, slapp av, og la oss ta oss av resten. ☕</p>
+  </div>
+</div>
+
+<!-- MODAL: RESERVASJON -->
+<div class="modal-overlay" id="modal-reservasjon" onclick="closeReservasjonModal(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeReservasjonModal()" aria-label="Lukk">✕</button>
+    <p class="s-label" data-i18n="res-label">Bord</p>
+    <h2 class="s-title" style="margin-bottom:14px;" data-i18n="res-title">Reserver bord</h2>
+    <p class="s-sub" data-i18n="res-sub">Fyll ut skjemaet og send oss en forespørsel — vi bekrefter så fort vi kan.</p>
+    <div class="form-card">
+      <form id="res-form" name="reservasjon" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="reservasjon">
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label class="form-label" for="res-navn" data-i18n="res-navn-lbl">Navn *</label>
+            <input class="form-input" type="text" id="res-navn" name="navn" required placeholder="Ditt navn" data-i18n-placeholder="res-navn-ph">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="res-tlf" data-i18n="res-tlf-lbl">Telefon *</label>
+            <input class="form-input" type="tel" id="res-tlf" name="telefon" required placeholder="+47 000 00 000">
+          </div>
+        </div>
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label class="form-label" for="res-dato" data-i18n="res-dato-lbl">Dato *</label>
+            <input class="form-input" type="date" id="res-dato" name="dato" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="res-antall" data-i18n="res-antall-lbl">Antall personer *</label>
+            <input class="form-input" type="number" id="res-antall" name="antall-personer" min="1" max="30" required placeholder="4">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="res-melding" data-i18n="res-melding-lbl">Kommentar (valgfritt)</label>
+          <textarea class="form-textarea" id="res-melding" name="kommentar" placeholder="Klokkeslett, allergier eller særskilte ønsker..." data-i18n-placeholder="res-melding-ph"></textarea>
+        </div>
+        <button type="submit" class="btn-form" data-i18n="res-btn">Send forespørsel</button>
+        <p class="form-note" data-i18n="res-note">Vi mottar forespørselen din direkte og bekrefter på telefon eller e-post så fort vi kan.</p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="fl">Kystens Kafé</div>
+      <p class="tagline" style="margin-bottom:6px;" data-i18n="fl-brand-tagline">Laget ferskt, servert med glede.</p>
+      <p data-i18n="fl-brand-city">Sortland, Nordland</p>
+    </div>
+    <div class="fl-col">
+      <h4 data-i18n="fl-col-explore">Utforsk</h4>
+      <ul>
+        <li><a href="#menu" data-i18n="fl-link-menu">Meny</a></li>
+        <li><a href="#story" data-i18n="fl-link-story">Om oss</a></li>
+        <li><a href="#" onclick="openReservasjonModal(); return false;" data-i18n="fl-link-res">Reserver bord</a></li>
+        <li><a href="#tilbakemelding" data-i18n="fl-link-tb">Tilbakemelding</a></li>
+        <li><a href="#" onclick="openPersonvernModal(); return false;">Personvern</a></li>
+        <li><a href="#contact" data-i18n="fl-link-contact">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="fl-col">
+      <h4 data-i18n="fl-col-hours">Åpningstider</h4>
+      <ul>
+        <li data-i18n="fl-hours-weekday">Man–fre &nbsp; 10:00 – 19:00</li>
+        <li data-i18n="fl-hours-weekend">Lør   10:00 – 16:00</li>
+        <li data-i18n="fl-hours-sunday">Søn   Stengt</li>
+      </ul>
+    </div>
+    <div class="fl-col">
+      <h4 data-i18n="fl-col-contact">Kontakt</h4>
+      <ul>
+        <li><a href="tel:+4790291012">+47 902 91 012</a></li>
+        <li><a href="mailto:kontakt@kystenskafe.no">kontakt@kystenskafe.no</a></li>
+        <li><a href="https://www.facebook.com/kystenskafe/" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <p style="text-align:center;font-size:13px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,0.07);margin-bottom:28px;"><a href="#tilbakemelding" style="color:rgba(255,255,255,0.5);">Gi oss tilbakemelding →</a></p>
+  <div class="footer-bottom">
+    <p data-i18n="fl-copyright">© 2026 Kystens Kafé. Alle rettigheter reservert.</p>
+    <p class="heart" data-i18n="fl-heart">Laget med ❤ i Sortland, Nordland</p>
+  </div>
+</footer>
+
+
+
+<script>
+  const gal = document.getElementById('galleryScroll');
+  let isDown = false, startX, scrollLeft;
+
+  gal.addEventListener('mousedown', e => {
+    isDown = true;
+    gal.classList.add('active');
+    startX = e.pageX - gal.offsetLeft;
+    scrollLeft = gal.scrollLeft;
+  });
+  gal.addEventListener('mouseleave', () => {
+    isDown = false;
+  });
+  gal.addEventListener('mouseup', () => {
+    isDown = false;
+  });
+  gal.addEventListener('mousemove', e => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - gal.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    gal.scrollLeft = scrollLeft - walk;
+  });
+
+  function toggleImg(id, btn) {
+    const el = document.getElementById(id);
+    const isOpen = el.classList.toggle('open');
+    btn.textContent = isOpen ? 'Skjul bilde' : 'Vis bilde';
+  }
+
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('on'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('on'));
+      btn.classList.add('on');
+      document.getElementById('tp-' + btn.dataset.t).classList.add('on');
+    });
+  });
+
+  const burger = document.getElementById('burger');
+  const mobNav = document.getElementById('mob-nav');
+  burger.addEventListener('click', () => mobNav.classList.toggle('open'));
+  burger.addEventListener('keydown', e => { if (e.key === 'Enter') mobNav.classList.toggle('open'); });
+  function closeMob() { mobNav.classList.remove('open'); }
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } });
+  }, { threshold: 0.10 });
+  document.querySelectorAll('.fu').forEach(el => obs.observe(el));
+
+  const navEl = document.querySelector('nav');
+  function updateNav() {
+    navEl.classList.toggle('scrolled', window.scrollY > window.innerHeight - 100);
+  }
+  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
+
+  /* ── OVERSETTELSER ── */
+  const T = {
+    no: {
+      'nav-menu':'Meny','nav-story':'Om oss','nav-gallery':'Galleri','nav-takeaway':'Bestill takeaway','nav-reservasjon':'Reserver bord','nav-contact':'Finn oss',
+      'mob-menu':'Meny','mob-story':'Om oss','mob-gallery':'Galleri','mob-reservasjon':'Reserver bord','mob-takeaway':'Bestill takeaway','mob-contact':'Finn oss',
+      'hero-eyebrow':'Kystens Kafé · Sortland','hero-title':'Smak av kysten','hero-sub':'Ferskt laget mat og kaffe midt i hjertet av Vesterålen.','hero-btn-menu':'Se menyen','hero-btn-takeaway':'Bestill takeaway',
+      'hi-label':'Hva vi tilbyr','hi-title':'Noe for enhver smak','hi-sub':'Vi lager alt med kjærlighet og ferske råvarer. Enten du trenger kaffe, en mettende lunsj eller noe søtt — du er alltid hjertelig velkommen.','hi-family':'Familievennlig',
+      'hi-chip-1':'Nylaget','hi-h-1':'Spesialkaffe','hi-t-1':'Fra klassisk espresso til kremet cappuccino og varm latte — kaffen vår er alltid nylaget med omsorg og kvalitetsbønner.',
+      'hi-chip-2':'Daglig fersk','hi-h-2':'Ferskt bakst','hi-t-2':'Croissanter, focaccia, horn og rundstykker — bakt og fylt med de beste ingrediensene. Ferskt levert hver eneste dag.',
+      'hi-chip-3':'Italiensk kvalitet','hi-h-3':'Kaker & Iskrem','hi-t-3':'Hjemmelagde kaker og ekte italiensk iskrem fra IL Primo — laget etter originale italienske oppskrifter med 11 smaksvarianter.',
+      'gal-label':'Galleri','gal-title':'Et innblikk i hverdagen vår',
+      'menu-label':'Vår meny','menu-title':'Smak av kysten','menu-sub':'Alt laget ferskt — fra enkle smørbrød til varme retter med internasjonale smaker, salater og iskrem som smelter på tungen.',
+      'tg-drikke':'Drikke','tg-mat':'Mat',
+      'tab-kaffe':'☕ Kaffe','tab-varmtdrikke':'🍵 Varme drikker','tab-kaldtdrikke':'🥤 Kalde drikker','tab-maltider':'🍝 Måltider','tab-bakst':'🥐 Bakst & søtt','tab-spesialmeny':'⭐ Spesialmeny',
+      'mi-espresso':'Espresso','md-espresso':'En kort, konsentrert og fyldig kopp — vår base for alle kaffedrikker.',
+      'mi-dobbel':'Dobbel Espresso','md-dobbel':'For deg som vil ha det litt ekstra.',
+      'mi-americano':'Americano','md-americano':'Espresso med varmt vann — ren og klassisk kaffesmak.',
+      'mi-cappuccino':'Cappuccino','md-cappuccino':'Espresso med dampet melk og kremet melkeskum. En klassiker.',
+      'mi-latte':'Latte','md-latte':'Mild espresso med mye dampet melk — perfekt til en rolig stund.',
+      'mi-flatwhite':'Flat White','md-flatwhite':'Dobbel espresso med silkemyk dampet melk — sterk og kremet.',
+      'mi-kakao':'Varm Kakao','md-kakao':'Rik og kremet varm sjokolade — god for store og små.',
+      'mi-te':'Te','md-te':'Utvalg av svart te, grønn te, ingefær og frukt. Spør om dagens utvalg.',
+      'mi-kanelbolle':'Kanelbolle','md-kanelbolle':'Ferskt bakt kanelbolle med kardemomme — varm rett fra ovnen.',
+      'mi-croissant':'Croissant','md-croissant':'Skinke og ost.',
+      'mi-brownie':'Brownie','md-brownie':'Tett, fuktig sjokoladebrownie — nybakt og uimotståelig.',
+      'mi-sitronkake':'Sitronkake','md-sitronkake':'Frisk og saftig sitronkake med sitronglasur — perfekt til kaffen.',
+      'mi-dagenskake':'Dagens Kake','md-dagenskake':'Hjemmelaget kake som varierer daglig — spør oss hva som er ferskt i dag.',
+      'ice-title':'Iskrem, Frozen Yoghurt & Sorbet','ice-sub':'IL Primo — laget etter originale italienske oppskrifter',
+      'ice-col-1':'Iskrem','ice-col-2':'Frozen Yoghurt','ice-col-3':'Sorbet (laktosefri)','ice-spesial':'Spesialiteter',
+      'mi-juice':'Juice & Brus','md-juice':'Ferskpresset appelsinjuice, eplejuice og utvalg av brus.',
+      'menu-hotfood-label':'Varmretter','menu-hotfood-sub':'Lages på bestilling — spør gjerne om dagens tilbud',
+      'mi-enchiladas-beef':'Beef Enchiladas Supremo','md-enchiladas-beef':'2 enchiladas fylt med storfekjøtt, sorte bønner og mais. Toppet med salsa roja, gratinert med cheddar og mozzarella. Serveres med rømme, syltet rødløk og sidesalat.',
+      'mi-enchiladas-pollo':'Enchiladas de Pollo Supremo','md-enchiladas-pollo':'2 enchiladas fylt med kylling, sorte bønner og mais. Toppet med salsa roja, gratinert med cheddar og mozzarella. Serveres med rømme, syltet rødløk og sidesalat.',
+      'mi-kystens-salat':'Kystens Salat','md-kystens-salat':'Kylling, feta, egg, grønnsaker og krutonger. Serveres med brød og smør.',
+      'mi-fitness-salat':'Fitness Salat','md-fitness-salat':'Kylling, mango, ananas, grønnsaker og krutonger. Serveres med brød og smør.',
+      'mi-focaccia':'Focaccia','md-focaccia':'Mozzarella, tomat og pesto.',
+      'mi-rundstykke':'Rundstykke','md-rundstykke':'Skinke, ost og egg.',
+      'mi-horn':'Stort Horn','md-horn':'Ost og skinke.',
+      'spesialmeny-txt':'Spesialmenyen oppdateres snart – spør oss i kassen!',
+      'story-label':'Vår historie','story-title':'En drøm ved havet','story-owners':'Katerina & Tim',
+      'story-p1':'I mange år drømte Katerina og Tim om dette — et sted der folk kunne komme inn, puste ut, og kjenne at de var velkomne. Et sted der kaffen alltid er nylaget, maten er laget med hjertet, og smilet er ekte.',
+      'story-p2':'Sortland ble stedet. Med fjordene like utenfor og midnattssolen som bader byen i gull om sommeren, fantes det ingen bedre plass å slå røtter. Her, midt i hjertet av Vesterålen, åpnet de endelig dørene til Kystens Kafé.',
+      'story-p3':'Hos oss handler det ikke bare om mat og kaffe — det handler om å skape øyeblikk. Mellom venner. Mellom fremmede som blir kjente. Mellom den travle hverdagen og et pusterom ved kysten.',
+      'story-p4':'Takk for at du er her. Nyt det, ta den tiden du trenger.',
+      'contact-label':'Besøk oss','contact-title':'Vi gleder oss til å se deg!','contact-sub':'Enten du er lokalbefolkning eller turist på vei gjennom Vesterålen — stikk innom. Du er alltid hjertelig velkommen.',
+      'cc-address-h':'Adresse','cc-hours-h':'Åpningstider','cc-contact-h':'Kontakt',
+      'cc-weekday':'Mandag – fredag','cc-weekend':'Lørdag','cc-sunday':'Søndag','cc-sunday-closed':'Stengt',
+      'toggle-btn':'Vis bilde av stedet','fb-link':'Følg oss på Facebook →',
+      'res-label':'Bord','res-title':'Reserver bord','res-sub':'Fyll ut skjemaet og send oss en forespørsel — vi bekrefter så fort vi kan.',
+      'res-navn-lbl':'Navn *','res-navn-ph':'Ditt navn','res-tlf-lbl':'Telefon *','res-dato-lbl':'Dato *','res-antall-lbl':'Antall personer *',
+      'res-melding-lbl':'Kommentar (valgfritt)','res-melding-ph':'Klokkeslett, allergier eller særskilte ønsker...',
+      'res-btn':'Send forespørsel','res-note':'Vi mottar forespørselen din direkte og bekrefter på telefon eller e-post så fort vi kan.',
+      'res-success':'E-posten er klar! Lukk dette og send meldingen i e-postprogrammet ditt.',
+      'tb-label':'Din mening','tb-title':'Hva synes du?','tb-sub':'Anonymt og valgfritt — hjelp oss å bli bedre for deg og alle andre gjester.',
+      'tb-rating-lbl':'Helhetlig inntrykk','tb-bra-lbl':'Hva var bra?','tb-bra-ph':'Mat, service, stemning...','tb-forbedre-lbl':'Hva kan vi forbedre?','tb-forbedre-ph':'Dine tanker hjelper oss å bli bedre...',
+      'tb-btn':'Send tilbakemelding','tb-note':'Skjemaet er anonymt — tilbakemeldingen sendes direkte til oss.',
+      'tb-success':'Takk for tilbakemeldingen! E-posten er klar — send den i e-postprogrammet ditt.',
+      'fl-brand-tagline':'Laget ferskt, servert med glede.','fl-brand-city':'Sortland, Nordland',
+      'fl-col-explore':'Utforsk','fl-col-hours':'Åpningstider','fl-col-contact':'Kontakt',
+      'fl-link-menu':'Meny','fl-link-story':'Om oss','fl-link-res':'Reserver bord','fl-link-tb':'Tilbakemelding','fl-link-contact':'Kontakt',
+      'fl-hours-weekday':'Man–fre   10:00 – 19:00','fl-hours-weekend':'Lør   10:00 – 16:00','fl-hours-sunday':'Søn   Stengt',
+      'fl-copyright':'© 2026 Kystens Kafé. Alle rettigheter reservert.','fl-heart':'Laget med ❤ i Sortland, Nordland',
+    },
+    en: {
+      'nav-menu':'Menu','nav-story':'About','nav-gallery':'Gallery','nav-takeaway':'Order takeaway','nav-reservasjon':'Reserve table','nav-contact':'Find us',
+      'mob-menu':'Menu','mob-story':'About us','mob-gallery':'Gallery','mob-reservasjon':'Reserve a table','mob-takeaway':'Order takeaway','mob-contact':'Find us',
+      'hero-eyebrow':'Kystens Kafé · Sortland','hero-title':'Taste of the coast','hero-sub':'Freshly made food and coffee in the heart of Vesterålen.','hero-btn-menu':'View menu','hero-btn-takeaway':'Order takeaway',
+      'hi-label':'What we offer','hi-title':'Something for every taste','hi-sub':'We make everything with love and fresh ingredients. Whether you need coffee, a hearty lunch or something sweet — you are always warmly welcome.','hi-family':'Family-friendly',
+      'hi-chip-1':'Freshly made','hi-h-1':'Specialty coffee','hi-t-1':'From classic espresso to creamy cappuccino and warm latte — our coffee is always freshly made with care and quality beans.',
+      'hi-chip-2':'Daily fresh','hi-h-2':'Fresh pastries','hi-t-2':'Croissants, focaccia, rolls and buns — baked and filled with the finest ingredients. Delivered fresh every single day.',
+      'hi-chip-3':'Italian quality','hi-h-3':'Cakes & Ice cream','hi-t-3':'Homemade cakes and authentic Italian ice cream from IL Primo — made to original Italian recipes with 11 flavour varieties.',
+      'gal-label':'Gallery','gal-title':'A glimpse of our everyday',
+      'menu-label':'Our menu','menu-title':'Taste of the coast','menu-sub':'Everything made fresh — from simple sandwiches to hot dishes with international flavours, salads and ice cream that melts on your tongue.',
+      'tg-drikke':'Drinks','tg-mat':'Food',
+      'tab-kaffe':'☕ Coffee','tab-varmtdrikke':'🍵 Hot drinks','tab-kaldtdrikke':'🥤 Cold drinks','tab-maltider':'🍝 Meals','tab-bakst':'🥐 Pastries & sweets','tab-spesialmeny':'⭐ Specials',
+      'mi-espresso':'Espresso','md-espresso':'A short, concentrated and rich cup — the base of all our coffee drinks.',
+      'mi-dobbel':'Double Espresso','md-dobbel':'For those who want a little extra.',
+      'mi-americano':'Americano','md-americano':'Espresso with hot water — clean and classic coffee taste.',
+      'mi-cappuccino':'Cappuccino','md-cappuccino':'Espresso with steamed milk and creamy foam. A classic.',
+      'mi-latte':'Latte','md-latte':'Mild espresso with lots of steamed milk — perfect for a relaxed moment.',
+      'mi-flatwhite':'Flat White','md-flatwhite':'Double espresso with silky smooth steamed milk — strong and creamy.',
+      'mi-kakao':'Hot Chocolate','md-kakao':'Rich and creamy hot chocolate — great for young and old.',
+      'mi-te':'Tea','md-te':"Selection of black tea, green tea, ginger and fruit. Ask about today's selection.",
+      'mi-kanelbolle':'Cinnamon bun','md-kanelbolle':'Freshly baked cinnamon bun with cardamom — warm straight from the oven.',
+      'mi-croissant':'Croissant','md-croissant':'Ham and cheese.',
+      'mi-brownie':'Brownie','md-brownie':'Dense, moist chocolate brownie — freshly baked and irresistible.',
+      'mi-sitronkake':'Lemon cake','md-sitronkake':'Fresh and moist lemon cake with lemon glaze — perfect with coffee.',
+      'mi-dagenskake':'Cake of the day','md-dagenskake':"Homemade cake that varies daily — ask us what's fresh today.",
+      'ice-title':'Ice cream, Frozen Yoghurt & Sorbet','ice-sub':'IL Primo — made to original Italian recipes',
+      'ice-col-1':'Ice cream','ice-col-2':'Frozen Yoghurt','ice-col-3':'Sorbet (lactose-free)','ice-spesial':'Specialties',
+      'mi-juice':'Juice & Soft drinks','md-juice':'Freshly squeezed orange juice, apple juice and a selection of soft drinks.',
+      'menu-hotfood-label':'Hot dishes','menu-hotfood-sub':"Made to order — feel free to ask about today's specials",
+      'mi-enchiladas-beef':'Beef Enchiladas Supremo','md-enchiladas-beef':'2 enchiladas filled with beef, black beans and corn. Topped with salsa roja, gratin with cheddar and mozzarella. Served with sour cream, pickled red onion and side salad.',
+      'mi-enchiladas-pollo':'Enchiladas de Pollo Supremo','md-enchiladas-pollo':'2 enchiladas filled with chicken, black beans and corn. Topped with salsa roja, gratin with cheddar and mozzarella. Served with sour cream, pickled red onion and side salad.',
+      'mi-kystens-salat':'Coastal Salad','md-kystens-salat':'Chicken, feta, egg, vegetables and croutons. Served with bread and butter.',
+      'mi-fitness-salat':'Fitness Salad','md-fitness-salat':'Chicken, mango, pineapple, vegetables and croutons. Served with bread and butter.',
+      'mi-focaccia':'Focaccia','md-focaccia':'Mozzarella, tomato and pesto.',
+      'mi-rundstykke':'Bread roll','md-rundstykke':'Ham, cheese and egg.',
+      'mi-horn':'Large Horn roll','md-horn':'Cheese and ham.',
+      'spesialmeny-txt':'The special menu is coming soon — ask us at the counter!',
+      'story-label':'Our story','story-title':'A dream by the sea','story-owners':'Katerina & Tim',
+      'story-p1':'For many years Katerina and Tim dreamed of this — a place where people could come in, breathe out, and feel welcome. A place where the coffee is always freshly made, the food is made with heart, and the smile is genuine.',
+      'story-p2':'Sortland became the place. With the fjords just outside and the midnight sun bathing the town in gold during summer, there was no better place to put down roots. Here, in the heart of Vesterålen, they finally opened the doors to Kystens Kafé.',
+      'story-p3':"With us it's not just about food and coffee — it's about creating moments. Between friends. Between strangers who become acquaintances. Between the busy everyday and a breathing space by the coast.",
+      'story-p4':'Thank you for being here. Enjoy it, take all the time you need.',
+      'contact-label':'Visit us','contact-title':'We look forward to seeing you!','contact-sub':"Whether you're a local or a tourist passing through Vesterålen — stop by. You are always warmly welcome.",
+      'cc-address-h':'Address','cc-hours-h':'Opening hours','cc-contact-h':'Contact',
+      'cc-weekday':'Monday – Friday','cc-weekend':'Saturday','cc-sunday':'Sunday','cc-sunday-closed':'Closed',
+      'toggle-btn':'Show photo of the place','fb-link':'Follow us on Facebook →',
+      'res-label':'Table','res-title':'Reserve a table','res-sub':'Fill in the form and send us a request — we will confirm as soon as possible.',
+      'res-navn-lbl':'Name *','res-navn-ph':'Your name','res-tlf-lbl':'Phone *','res-dato-lbl':'Date *','res-antall-lbl':'Number of people *',
+      'res-melding-lbl':'Comment (optional)','res-melding-ph':'Time, allergies or special requests...',
+      'res-btn':'Send request','res-note':'We receive your request directly and will confirm by phone or email as soon as we can.',
+      'res-success':'The email is ready! Close this and send the message in your email client.',
+      'tb-label':'Your opinion','tb-title':'What do you think?','tb-sub':'Anonymous and optional — help us improve for you and all other guests.',
+      'tb-rating-lbl':'Overall impression','tb-bra-lbl':'What was good?','tb-bra-ph':'Food, service, atmosphere...','tb-forbedre-lbl':'What can we improve?','tb-forbedre-ph':'Your thoughts help us get better...',
+      'tb-btn':'Send feedback','tb-note':'The form is anonymous — your feedback is sent directly to us.',
+      'tb-success':'Thank you for your feedback! The email is ready — send it in your email client.',
+      'fl-brand-tagline':'Made fresh, served with joy.','fl-brand-city':'Sortland, Nordland',
+      'fl-col-explore':'Explore','fl-col-hours':'Opening hours','fl-col-contact':'Contact',
+      'fl-link-menu':'Menu','fl-link-story':'About us','fl-link-res':'Reserve a table','fl-link-tb':'Feedback','fl-link-contact':'Contact',
+      'fl-hours-weekday':'Mon–Fri   10:00 – 19:00','fl-hours-weekend':'Sat   10:00 – 16:00','fl-hours-sunday':'Sun   Closed',
+      'fl-copyright':'© 2026 Kystens Kafé. All rights reserved.','fl-heart':'Made with ❤ in Sortland, Nordland',
+    }
+  };
+
+  T.de = {
+    'nav-menu':'Speisekarte','nav-story':'Über uns','nav-gallery':'Galerie','nav-takeaway':'Takeaway bestellen','nav-reservasjon':'Tisch reservieren','nav-contact':'Finden Sie uns',
+    'mob-menu':'Speisekarte','mob-story':'Über uns','mob-gallery':'Galerie','mob-reservasjon':'Tisch reservieren','mob-takeaway':'Takeaway bestellen','mob-contact':'Finden Sie uns',
+    'hero-eyebrow':'Kystens Kafé · Sortland','hero-title':'Geschmack der Küste','hero-sub':'Frisch zubereitetes Essen und Kaffee im Herzen von Vesterålen.','hero-btn-menu':'Speisekarte ansehen','hero-btn-takeaway':'Takeaway bestellen',
+    'hi-label':'Was wir anbieten','hi-title':'Für jeden Geschmack etwas','hi-sub':'Wir machen alles mit Liebe und frischen Zutaten. Ob Kaffee, ein herzhaftes Mittagessen oder etwas Süßes — Sie sind immer herzlich willkommen.','hi-family':'Familienfreundlich',
+    'hi-chip-1':'Frisch gemacht','hi-h-1':'Spezialkaffee','hi-t-1':'Vom klassischen Espresso bis zum cremigen Cappuccino und warmen Latte — unser Kaffee wird immer frisch mit Sorgfalt und Qualitätsbohnen zubereitet.',
+    'hi-chip-2':'Täglich frisch','hi-h-2':'Frisches Gebäck','hi-t-2':'Croissants, Focaccia, Brötchen und Hörnchen — gebacken und gefüllt mit den feinsten Zutaten. Täglich frisch geliefert.',
+    'hi-chip-3':'Italienische Qualität','hi-h-3':'Kuchen & Eis','hi-t-3':'Hausgemachte Kuchen und authentisches italienisches Eis von IL Primo — nach originalen italienischen Rezepten mit 11 Geschmackssorten.',
+    'gal-label':'Galerie','gal-title':'Ein Einblick in unseren Alltag',
+    'menu-label':'Unsere Speisekarte','menu-title':'Geschmack der Küste','menu-sub':'Alles frisch zubereitet — von einfachen Sandwiches bis zu warmen Gerichten mit internationalen Aromen, Salaten und Eis, das auf der Zunge zergeht.',
+    'tg-drikke':'Getränke','tg-mat':'Essen',
+    'tab-kaffe':'☕ Kaffee','tab-varmtdrikke':'🍵 Heiße Getränke','tab-kaldtdrikke':'🥤 Kalte Getränke','tab-maltider':'🍝 Mahlzeiten','tab-bakst':'🥐 Gebäck & Süßes','tab-spesialmeny':'⭐ Spezialitäten',
+    'mi-espresso':'Espresso','md-espresso':'Eine kurze, konzentrierte und kräftige Tasse — die Basis all unserer Kaffeegetränke.',
+    'mi-dobbel':'Doppelter Espresso','md-dobbel':'Für alle, die ein bisschen mehr möchten.',
+    'mi-americano':'Americano','md-americano':'Espresso mit heißem Wasser — reiner und klassischer Kaffeegeschmack.',
+    'mi-cappuccino':'Cappuccino','md-cappuccino':'Espresso mit aufgeschäumter Milch und cremigem Milchschaum. Ein Klassiker.',
+    'mi-latte':'Latte','md-latte':'Milder Espresso mit viel aufgeschäumter Milch — perfekt für einen entspannten Moment.',
+    'mi-flatwhite':'Flat White','md-flatwhite':'Doppelter Espresso mit seidig weicher Milch — stark und cremig.',
+    'mi-kakao':'Heiße Schokolade','md-kakao':'Reichhaltige und cremige heiße Schokolade — für Jung und Alt.',
+    'mi-te':'Tee','md-te':'Auswahl an schwarzem Tee, grünem Tee, Ingwer und Früchten. Fragen Sie nach der heutigen Auswahl.',
+    'mi-kanelbolle':'Zimtschnecke','md-kanelbolle':'Frisch gebackene Zimtschnecke mit Kardamom — warm direkt aus dem Ofen.',
+    'mi-croissant':'Croissant','md-croissant':'Schinken und Käse.',
+    'mi-brownie':'Brownie','md-brownie':'Dichter, feuchter Schokoladen-Brownie — frisch gebacken und unwiderstehlich.',
+    'mi-sitronkake':'Zitronenkuchen','md-sitronkake':'Frischer und saftiger Zitronenkuchen mit Zitronenglasur — perfekt zum Kaffee.',
+    'mi-dagenskake':'Kuchen des Tages','md-dagenskake':'Hausgemachter Kuchen, der täglich wechselt — fragen Sie uns, was heute frisch ist.',
+    'ice-title':'Eis, Frozen Yoghurt & Sorbet','ice-sub':'IL Primo — nach originalen italienischen Rezepten',
+    'ice-col-1':'Eis','ice-col-2':'Frozen Yoghurt','ice-col-3':'Sorbet (laktosefrei)','ice-spesial':'Spezialitäten',
+    'mi-juice':'Saft & Softdrinks','md-juice':'Frisch gepresster Orangensaft, Apfelsaft und eine Auswahl an Softdrinks.',
+    'menu-hotfood-label':'Warme Gerichte','menu-hotfood-sub':'Auf Bestellung zubereitet — fragen Sie gerne nach den Tagesangeboten',
+    'mi-enchiladas-beef':'Beef Enchiladas Supremo','md-enchiladas-beef':'2 Enchiladas gefüllt mit Rindfleisch, schwarzen Bohnen und Mais. Mit Salsa Roja, überbacken mit Cheddar und Mozzarella. Serviert mit Sauerrahm, eingelegten roten Zwiebeln und Beilagensalat.',
+    'mi-enchiladas-pollo':'Enchiladas de Pollo Supremo','md-enchiladas-pollo':'2 Enchiladas gefüllt mit Hühnchen, schwarzen Bohnen und Mais. Mit Salsa Roja, überbacken mit Cheddar und Mozzarella. Serviert mit Sauerrahm, eingelegten roten Zwiebeln und Beilagensalat.',
+    'mi-kystens-salat':'Küstensalat','md-kystens-salat':'Hähnchen, Feta, Ei, Gemüse und Croutons. Serviert mit Brot und Butter.',
+    'mi-fitness-salat':'Fitness-Salat','md-fitness-salat':'Hähnchen, Mango, Ananas, Gemüse und Croutons. Serviert mit Brot und Butter.',
+    'mi-focaccia':'Focaccia','md-focaccia':'Mozzarella, Tomate und Pesto.',
+    'mi-rundstykke':'Brötchen','md-rundstykke':'Schinken, Käse und Ei.',
+    'mi-horn':'Großes Hörnchen','md-horn':'Käse und Schinken.',
+    'spesialmeny-txt':'Die Spezialkarte kommt bald — fragen Sie uns an der Kasse!',
+    'story-label':'Unsere Geschichte','story-title':'Ein Traum am Meer','story-owners':'Katerina & Tim',
+    'story-p1':'Viele Jahre lang träumten Katerina und Tim davon — ein Ort, an dem Menschen hereinkommen, durchatmen und sich willkommen fühlen können. Ein Ort, an dem der Kaffee immer frisch ist, das Essen mit Herz gemacht wird und das Lächeln echt ist.',
+    'story-p2':'Sortland wurde der Ort. Mit den Fjorden direkt vor der Tür und der Mitternachtssonne, die die Stadt im Sommer in Gold taucht, gab es keinen besseren Platz, um Wurzeln zu schlagen. Hier, im Herzen von Vesterålen, öffneten sie endlich die Türen des Kystens Kafé.',
+    'story-p3':'Bei uns geht es nicht nur um Essen und Kaffee — es geht darum, Momente zu schaffen. Zwischen Freunden. Zwischen Fremden, die Bekannte werden. Zwischen dem hektischen Alltag und einem Atemzug an der Küste.',
+    'story-p4':'Danke, dass Sie hier sind. Genießen Sie es, nehmen Sie sich all die Zeit, die Sie brauchen.',
+    'contact-label':'Besuchen Sie uns','contact-title':'Wir freuen uns, Sie zu sehen!','contact-sub':'Ob Einheimischer oder Tourist auf dem Weg durch Vesterålen — schauen Sie vorbei. Sie sind immer herzlich willkommen.',
+    'cc-address-h':'Adresse','cc-hours-h':'Öffnungszeiten','cc-contact-h':'Kontakt',
+    'cc-weekday':'Montag – Freitag','cc-weekend':'Samstag','cc-sunday':'Sonntag','cc-sunday-closed':'Geschlossen',
+    'toggle-btn':'Foto des Ortes anzeigen','fb-link':'Folgen Sie uns auf Facebook →',
+    'res-label':'Tisch','res-title':'Tisch reservieren','res-sub':'Füllen Sie das Formular aus und senden Sie uns eine Anfrage — wir bestätigen so schnell wie möglich.',
+    'res-navn-lbl':'Name *','res-navn-ph':'Ihr Name','res-tlf-lbl':'Telefon *','res-dato-lbl':'Datum *','res-antall-lbl':'Anzahl Personen *',
+    'res-melding-lbl':'Kommentar (optional)','res-melding-ph':'Uhrzeit, Allergien oder besondere Wünsche...',
+    'res-btn':'Anfrage senden','res-note':'Wir erhalten Ihre Anfrage direkt und bestätigen so schnell wie möglich per Telefon oder E-Mail.',
+    'res-success':'Die E-Mail ist bereit! Schließen Sie dies und senden Sie die Nachricht in Ihrem E-Mail-Programm.',
+    'tb-label':'Ihre Meinung','tb-title':'Was denken Sie?','tb-sub':'Anonym und freiwillig — helfen Sie uns, uns für Sie und alle anderen Gäste zu verbessern.',
+    'tb-rating-lbl':'Gesamteindruck','tb-bra-lbl':'Was war gut?','tb-bra-ph':'Essen, Service, Atmosphäre...','tb-forbedre-lbl':'Was können wir verbessern?','tb-forbedre-ph':'Ihre Gedanken helfen uns besser zu werden...',
+    'tb-btn':'Feedback senden','tb-note':'Das Formular ist anonym — Ihr Feedback wird direkt an uns gesendet.',
+    'tb-success':'Vielen Dank für Ihr Feedback! Die E-Mail ist bereit — senden Sie sie in Ihrem E-Mail-Programm.',
+    'fl-brand-tagline':'Frisch gemacht, mit Freude serviert.','fl-brand-city':'Sortland, Nordland',
+    'fl-col-explore':'Entdecken','fl-col-hours':'Öffnungszeiten','fl-col-contact':'Kontakt',
+    'fl-link-menu':'Speisekarte','fl-link-story':'Über uns','fl-link-res':'Tisch reservieren','fl-link-tb':'Feedback','fl-link-contact':'Kontakt',
+    'fl-hours-weekday':'Mo–Fr   10:00 – 19:00','fl-hours-weekend':'Sa   10:00 – 16:00','fl-hours-sunday':'So   Geschlossen',
+    'fl-copyright':'© 2026 Kystens Kafé. Alle Rechte vorbehalten.','fl-heart':'Mit ❤ gemacht in Sortland, Nordland',
+  };
+
+  function applyLang(lang) {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (T[lang] && T[lang][key] !== undefined) el.textContent = T[lang][key];
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (T[lang] && T[lang][key] !== undefined) el.placeholder = T[lang][key];
+    });
+    document.documentElement.lang = lang === 'en' ? 'en' : lang === 'de' ? 'de' : 'no';
+    document.getElementById('btn-no').classList.toggle('active', lang === 'no');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+  }
+
+  function setLang(lang) {
+    localStorage.setItem('lang', lang);
+    applyLang(lang);
+  }
+
+  applyLang(localStorage.getItem('lang') || 'no');
+
+  function openFamilyModal() {
+    document.getElementById('modal-family').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeFamilyModal(e) {
+    if (!e || e.target === document.getElementById('modal-family')) {
+      document.getElementById('modal-family').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+  function openReservasjonModal() {
+    document.getElementById('modal-reservasjon').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeReservasjonModal(e) {
+    if (!e || e.target === document.getElementById('modal-reservasjon')) {
+      document.getElementById('modal-reservasjon').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+  function openPersonvernModal() {
+    document.getElementById('modal-personvern')
+      .classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closePersonvernModal(e) {
+    if (!e || e.target === document.getElementById('modal-personvern')) {
+      document.getElementById('modal-personvern')
+        .classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { document.getElementById('modal-family').classList.remove('open'); document.getElementById('modal-reservasjon').classList.remove('open'); document.getElementById('modal-personvern').classList.remove('open'); document.body.style.overflow = ''; } });
+
+  function acceptCookies() {
+    document.getElementById('cookie-banner')
+      .style.display = 'none';
+    localStorage.setItem('cookies-accepted', 'true');
+  }
+
+  if (localStorage.getItem('cookies-accepted') === 'true') {
+    document.getElementById('cookie-banner')
+      .style.display = 'none';
+  }
+
+</script>
+<div id="cookie-banner" style="
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 500;
+  background: var(--charcoal-dk);
+  color: rgba(255,255,255,0.85);
+  padding: 16px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  border-top: 2px solid var(--terra);">
+  <p style="margin:0;max-width:700px;line-height:1.6;">
+    Vi bruker informasjonskapsler fra Google (Maps og Fonts) 
+    for å gi deg den beste opplevelsen. Ved å bruke siden 
+    godtar du dette. 
+    <a href="#" onclick="openPersonvernModal(); return false;" 
+    style="color:var(--teal);text-decoration:underline;">
+    Les personvernerklæringen →</a>
+  </p>
+  <button onclick="acceptCookies()" style="
+    background: var(--terra);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: var(--radius);
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;">
+    Jeg forstår
+  </button>
+</div>
+<div class="modal-overlay" id="modal-personvern" onclick="closePersonvernModal(event)">
+  <div class="modal-box">
+    <button class="modal-close" 
+    onclick="closePersonvernModal()" 
+    aria-label="Lukk">✕</button>
+    <p class="s-label">Juridisk</p>
+    <h2 class="s-title" style="margin-bottom:14px;">
+    Personvernerklæring</h2>
+    <div style="font-size:15px;color:var(--text-lt);
+    line-height:1.85;">
+      <h3 style="font-size:18px;color:var(--charcoal);
+      margin:24px 0 8px;">Hvem er ansvarlig?</h3>
+      <p>Kystens Kafé, Handelsparken Sortland, 
+      Sjøgata 30, 8400 Sortland. 
+      Kontakt: kontakt@kystenskafe.no</p>
+
+      <h3 style="font-size:18px;color:var(--charcoal);
+      margin:24px 0 8px;">Hvilke data samler vi inn?</h3>
+      <p>Via reservasjonsskjemaet samler vi inn navn, 
+      telefonnummer, ønsket dato og antall personer. 
+      Dette brukes kun for å bekrefte bordreservasjoner 
+      og slettes etter at reservasjonen er gjennomført.</p>
+
+      <h3 style="font-size:18px;color:var(--charcoal);
+      margin:24px 0 8px;">Informasjonskapsler</h3>
+      <p>Nettsiden bruker Google Fonts for typografi og 
+      Google Maps for kartvisning. Disse tjenestene kan 
+      lagre informasjonskapsler fra Google.</p>
+
+      <h3 style="font-size:18px;color:var(--charcoal);
+      margin:24px 0 8px;">Dine rettigheter</h3>
+      <p>Du har rett til innsyn i, retting av og sletting 
+      av dine personopplysninger. Ta kontakt på 
+      kontakt@kystenskafe.no så hjelper vi deg.</p>
+
+      <h3 style="font-size:18px;color:var(--charcoal);
+      margin:24px 0 8px;">Sist oppdatert</h3>
+      <p>Juni 2026</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
