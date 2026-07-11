@@ -433,9 +433,9 @@
         <img src="IMG_1431.webp" alt="Familievennlig — lekeområde for barn">
       </div>
       <div class="hi-card-body">
-        <span class="hi-chip" data-i18n="hi-family">Familievennlig</span>
-        <h3 class="hi-title" data-i18n="hi-h-4">For barnefamilier</h3>
-        <p class="hi-text" data-i18n="hi-t-4">Lekeområde, barnestoler, stellebord og god plass til barnevogner — vi har tenkt på hele familien.</p>
+        <span class="hi-chip" data-i18n="hi-chip-family">Familievennlig</span>
+        <h3 class="hi-title" data-i18n="hi-h-family">For barnefamilier</h3>
+        <p class="hi-text" data-i18n="hi-t-family">Lekeområde, barnestoler, stellebord og god plass til barnevogner — vi har tenkt på hele familien.</p>
       </div>
     </div>
   </div>
@@ -622,7 +622,7 @@
   <div class="story-grid">
     <div class="story-img-wrap fu">
       <img src="IMG_1539.webp" alt="Katerina og Tim på Kystens Kafé">
-      <div class="dream-badge"><strong>15</strong><span>års<br>drøm</span></div>
+      <div class="dream-badge"><strong>15</strong><span><span data-i18n="dream-badge-line1">års</span><br><span data-i18n="dream-badge-line2">drøm</span></span></div>
     </div>
     <div class="story-text fu d1">
       <p class="s-label" data-i18n="story-label">Vår historie</p>
@@ -661,7 +661,7 @@
     <img src="ferskt-brod.webp" alt="Ferskt brød" loading="lazy">
     <img src="IMG_1447.webp" alt="Interiør" loading="lazy">
   </div>
-  <p class="gallery-scroll-hint" style="text-align:center;margin-top:12px;" data-i18n="gal-hint">← Sveip eller scroll for å se mer →</p>
+  <p class="gallery-scroll-hint" style="text-align:center;margin-top:12px;" data-i18n="gallery-hint">← Sveip eller scroll for å se mer →</p>
 </section>
 
 <!-- TILBAKEMELDING -->
@@ -674,13 +674,13 @@
 
   <p style="font-size:13px;font-weight:700;
   letter-spacing:0.1em;text-transform:uppercase;
-  color:var(--teal);margin-bottom:8px;" data-i18n="tb-label">
+  color:var(--teal);margin-bottom:8px;" data-i18n="tb2-label">
     Din mening
   </p>
 
   <h2 style="font-family:'Playfair Display',serif;
   font-size:26px;color:var(--charcoal);
-  margin-bottom:10px;" data-i18n="tb-title">
+  margin-bottom:10px;" data-i18n="tb2-title">
     Hva synes du om besøket?
   </h2>
 
@@ -689,12 +689,12 @@
      rel="noopener"
      class="btn-feedback"
      style="margin-top:16px;display:inline-block;"
-     data-i18n="tb-link">
+     data-i18n="tb2-btn">
     Gi tilbakemelding →
   </a>
 
   <p style="font-size:12px;color:var(--text-lt);
-  margin-top:12px;" data-i18n="tb-time">
+  margin-top:12px;" data-i18n="tb2-note">
     Tar ca. 1 minutt — helt anonymt
   </p>
 </section>
@@ -751,15 +751,15 @@
 <div class="modal-overlay" id="modal-family" onclick="closeFamilyModal(event)">
   <div class="modal-box">
     <button class="modal-close" onclick="closeFamilyModal()" aria-label="Lukk">✕</button>
-    <p class="s-label">Familievennlig</p>
-    <h2 class="s-title" style="margin-bottom:14px;">For barnefamilier</h2>
-    <p class="s-sub">Vi ønsker alle hjertelig velkommen — store som små. Hos oss er det god plass og god stemning for hele familien.</p>
+    <p class="s-label" data-i18n="family-label">Familievennlig</p>
+    <h2 class="s-title" style="margin-bottom:14px;" data-i18n="family-title">For barnefamilier</h2>
+    <p class="s-sub" data-i18n="family-sub">Vi ønsker alle hjertelig velkommen — store som små. Hos oss er det god plass og god stemning for hele familien.</p>
     <div class="hi-grid" style="grid-template-columns: repeat(2, 1fr);">
       <div class="hi-card">
         <div class="hi-card-img"><img src="IMG_1431.webp" alt="Barnebord og lekeområde"></div>
         <div class="hi-card-body">
-          <h3 class="hi-title">Lekeområde</h3>
-          <p class="hi-text">Vi har et eget lite lekeområde med bord og benker, tegnesaker og Lego — så de minste har noe å holde på med mens dere slapper av.</p>
+          <h3 class="hi-title" data-i18n="family-h1">Lekeområde</h3>
+          <p class="hi-text" data-i18n="family-t1">Vi har et eget lite lekeområde med bord og benker, tegnesaker og Lego — så de minste har noe å holde på med mens dere slapper av.</p>
         </div>
       </div>
       <div class="hi-card">
@@ -767,8 +767,8 @@
           <img src="IMG_1450.webp" alt="Barnestoler">
         </div>
         <div class="hi-card-body">
-          <h3 class="hi-title">Praktisk informasjon</h3>
-          <p class="hi-text">Vi har barnestoler og god plass til barnevogner. Trenger du å varme opp medbrakt mat eller flaske? Bare spør — vi hjelper gjerne.</p>
+          <h3 class="hi-title" data-i18n="family-h2">Praktisk informasjon</h3>
+          <p class="hi-text" data-i18n="family-t2">Vi har barnestoler og god plass til barnevogner. Trenger du å varme opp medbrakt mat eller flaske? Bare spør — vi hjelper gjerne.</p>
         </div>
       </div>
       <div class="hi-card">
@@ -776,8 +776,8 @@
           <img src="isbilde.webp" alt="IL Primo iskrem">
         </div>
         <div class="hi-card-body">
-          <h3 class="hi-title">Noe for barna</h3>
-          <p class="hi-text">Vi har ekte italiensk iskrem fra IL Primo med over 11 smaker, i tillegg til isbeger og spaghettiis — en favoritt blant de minste.</p>
+          <h3 class="hi-title" data-i18n="family-h3">Noe for barna</h3>
+          <p class="hi-text" data-i18n="family-t3">Vi har ekte italiensk iskrem fra IL Primo med over 11 smaker, i tillegg til isbeger og spaghettiis — en favoritt blant de minste.</p>
         </div>
       </div>
       <div class="hi-card">
@@ -785,12 +785,12 @@
           <img src="IMG_1525.webp" alt="Stellebord">
         </div>
         <div class="hi-card-body">
-          <h3 class="hi-title">Stellebord</h3>
-          <p class="hi-text">Vi har stellebord tilgjengelig — så du kan ta deg av de minste uten å måtte forlate kaféen. Spør personalet så hjelper vi deg.</p>
+          <h3 class="hi-title" data-i18n="family-h4">Stellebord</h3>
+          <p class="hi-text" data-i18n="family-t4">Vi har stellebord tilgjengelig — så du kan ta deg av de minste uten å måtte forlate kaféen. Spør personalet så hjelper vi deg.</p>
         </div>
       </div>
     </div>
-    <p class="modal-family-footer">Kystens Kafé er et sted for hele familien. Ta med ungene, slapp av, og la oss ta oss av resten. ☕</p>
+    <p class="modal-family-footer" data-i18n="family-footer">Kystens Kafé er et sted for hele familien. Ta med ungene, slapp av, og la oss ta oss av resten. ☕</p>
   </div>
 </div>
 
@@ -850,7 +850,7 @@
         <li><a href="#story" data-i18n="fl-link-story">Om oss</a></li>
         <li><a href="#" onclick="openReservasjonModal(); return false;" data-i18n="fl-link-res">Reserver bord</a></li>
         <li><a href="#tilbakemelding" data-i18n="fl-link-tb">Tilbakemelding</a></li>
-        <li><a href="#" onclick="openPersonvernModal(); return false;">Personvern</a></li>
+        <li><a href="#" onclick="openPersonvernModal(); return false;" data-i18n="fl-link-privacy">Personvern</a></li>
         <li><a href="#contact" data-i18n="fl-link-contact">Kontakt</a></li>
       </ul>
     </div>
@@ -871,7 +871,7 @@
       </ul>
     </div>
   </div>
-  <p style="text-align:center;font-size:13px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,0.07);margin-bottom:28px;"><a href="#tilbakemelding" style="color:rgba(255,255,255,0.5);">Gi oss tilbakemelding →</a></p>
+  <p style="text-align:center;font-size:13px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,0.07);margin-bottom:28px;"><a href="#tilbakemelding" style="color:rgba(255,255,255,0.5);" data-i18n="fl-link-tb-footer">Gi oss tilbakemelding →</a></p>
   <div class="footer-bottom">
     <p data-i18n="fl-copyright">© 2026 Kystens Kafé. Alle rettigheter reservert.</p>
     <p class="heart" data-i18n="fl-heart">Laget med ❤ i Sortland, Nordland</p>
@@ -907,7 +907,8 @@
   function toggleImg(id, btn) {
     const el = document.getElementById(id);
     const isOpen = el.classList.toggle('open');
-    btn.textContent = isOpen ? 'Skjul bilde' : 'Vis bilde';
+    const lang = localStorage.getItem('lang') || 'no';
+    btn.textContent = isOpen ? (T[lang]?.['toggle-btn-hide'] || 'Skjul bilde') : (T[lang]?.['toggle-btn'] || 'Vis bilde');
   }
 
   document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -1003,13 +1004,53 @@
       'fl-link-menu':'Meny','fl-link-story':'Om oss','fl-link-res':'Reserver bord','fl-link-tb':'Tilbakemelding','fl-link-contact':'Kontakt',
       'fl-hours-weekday':'Man–fre   10:00 – 19:00','fl-hours-weekend':'Lør   10:00 – 16:00','fl-hours-sunday':'Søn   Stengt',
       'fl-copyright':'© 2026 Kystens Kafé. Alle rettigheter reservert.','fl-heart':'Laget med ❤ i Sortland, Nordland',
+      'hi-chip-family':'Familievennlig',
+      'hi-h-family':'For barnefamilier',
+      'hi-t-family':'Lekeområde, barnestoler, stellebord og god plass til barnevogner — vi har tenkt på hele familien.',
+      'gallery-hint':'← Sveip eller scroll for å se mer →',
+      'tb2-label':'Din mening',
+      'tb2-title':'Hva synes du om besøket?',
+      'tb2-btn':'Gi tilbakemelding →',
+      'tb2-note':'Tar ca. 1 minutt — helt anonymt',
+      'fl-link-tb-footer':'Gi oss tilbakemelding →',
+      'fl-link-privacy':'Personvern',
+      'toggle-btn-hide':'Skjul bilde',
+      'cookie-text':'Vi bruker informasjonskapsler fra Google (Maps og Fonts) for å gi deg den beste opplevelsen. Ved å bruke siden godtar du dette.',
+      'cookie-link':'Les personvernerklæringen →',
+      'cookie-btn':'Jeg forstår',
+      'privacy-label':'Juridisk',
+      'privacy-title':'Personvernerklæring',
+      'privacy-h1':'Hvem er ansvarlig?',
+      'privacy-p1':'Kystens Kafé, Handelsparken Sortland, Sjøgata 30, 8400 Sortland. Kontakt: kontakt@kystenskafe.no',
+      'privacy-h2':'Hvilke data samler vi inn?',
+      'privacy-p2':'Via reservasjonsskjemaet samler vi inn navn, telefonnummer, ønsket dato og antall personer. Dette brukes kun for å bekrefte bordreservasjoner og slettes etter at reservasjonen er gjennomført.',
+      'privacy-h3':'Informasjonskapsler',
+      'privacy-p3':'Nettsiden bruker Google Fonts for typografi og Google Maps for kartvisning. Disse tjenestene kan lagre informasjonskapsler fra Google.',
+      'privacy-h4':'Dine rettigheter',
+      'privacy-p4':'Du har rett til innsyn i, retting av og sletting av dine personopplysninger. Ta kontakt på kontakt@kystenskafe.no så hjelper vi deg.',
+      'privacy-h5':'Sist oppdatert',
+      'privacy-p5':'Juni 2026',
+      'family-label':'Familievennlig',
+      'family-title':'For barnefamilier',
+      'family-sub':'Vi ønsker alle hjertelig velkommen — store som små. Hos oss er det god plass og god stemning for hele familien.',
+      'family-h1':'Lekeområde',
+      'family-t1':'Vi har et eget lite lekeområde med bord og benker, tegnesaker og Lego — så de minste har noe å holde på med mens dere slapper av.',
+      'family-h2':'Praktisk informasjon',
+      'family-t2':'Vi har barnestoler og god plass til barnevogner. Trenger du å varme opp medbrakt mat eller flaske? Bare spør — vi hjelper gjerne.',
+      'family-h3':'Noe for barna',
+      'family-t3':'Vi har ekte italiensk iskrem fra IL Primo med over 11 smaker, i tillegg til isbeger og spaghettiis — en favoritt blant de minste.',
+      'family-h4':'Stellebord',
+      'family-t4':'Vi har stellebord tilgjengelig — så du kan ta deg av de minste uten å måtte forlate kaféen. Spør personalet så hjelper vi deg.',
+      'family-footer':'Kystens Kafé er et sted for hele familien. Ta med ungene, slapp av, og la oss ta oss av resten. ☕',
+      'dream-badge-line1':'års',
+      'dream-badge-line2':'drøm',
     },
     en: {
       'nav-menu':'Menu','nav-story':'About','nav-gallery':'Gallery','nav-takeaway':'Order takeaway','nav-reservasjon':'Reserve a table','nav-contact':'Find us',
       'mob-menu':'Menu','mob-story':'About us','mob-gallery':'Gallery','mob-reservasjon':'Reserve a table','mob-takeaway':'Order takeaway','mob-contact':'Find us',
       'hero-eyebrow':'Kystens Kafé · Sortland','hero-title':'Taste of the coast','hero-sub':'Freshly made food and coffee in the heart of Vesterålen.','hero-btn-menu':'View menu','hero-btn-takeaway':'Order takeaway',
       'hi-label':'What we offer','hi-title':'Something for every taste','hi-sub':'We make everything with love and fresh ingredients. Whether you need coffee, a hearty lunch or something sweet — you are always warmly welcome.','hi-family':'Family-friendly',
-      'hi-chip-1':'New!','hi-h-1':'New coffee machine','hi-t-1':'We have just invested in a brand new coffee machine — which means even better coffee for you. Come in and taste the difference for yourself!',
+      'hi-chip-1':'New!','hi-h-1':'New coffee machine','hi-t-1':'We\'ve just invested in a brand new coffee machine — meaning even better coffee for you. Come in and taste the difference yourself!',
       'hi-chip-2':'Daily fresh','hi-h-2':'Fresh pastries','hi-t-2':'Croissants, focaccia, rolls and buns — baked and filled with the finest ingredients. Delivered fresh every single day.',
       'hi-chip-3':'Italian quality','hi-h-3':'Cakes & Ice cream','hi-t-3':'Homemade cakes and authentic Italian ice cream from IL Primo — made to original Italian recipes with 11 flavour varieties.',
       'hi-h-4':'For families with children','hi-t-4':'Play area, high chairs, changing table and plenty of room for prams — we have thought of the whole family.',
@@ -1068,6 +1109,46 @@
       'fl-link-menu':'Menu','fl-link-story':'About us','fl-link-res':'Reserve a table','fl-link-tb':'Feedback','fl-link-contact':'Contact',
       'fl-hours-weekday':'Mon–Fri   10:00 – 19:00','fl-hours-weekend':'Sat   10:00 – 16:00','fl-hours-sunday':'Sun   Closed',
       'fl-copyright':'© 2026 Kystens Kafé. All rights reserved.','fl-heart':'Made with ❤ in Sortland, Nordland',
+      'hi-chip-family':'Family-friendly',
+      'hi-h-family':'For families with children',
+      'hi-t-family':'Play area, high chairs, changing table and plenty of space for prams — we\'ve thought of the whole family.',
+      'gallery-hint':'← Swipe or scroll to see more →',
+      'tb2-label':'Your opinion',
+      'tb2-title':'How was your visit?',
+      'tb2-btn':'Leave feedback →',
+      'tb2-note':'Takes about 1 minute — completely anonymous',
+      'fl-link-tb-footer':'Give us feedback →',
+      'fl-link-privacy':'Privacy policy',
+      'toggle-btn-hide':'Hide photo',
+      'cookie-text':'We use cookies from Google (Maps and Fonts) to give you the best experience. By using the site you accept this.',
+      'cookie-link':'Read the privacy policy →',
+      'cookie-btn':'I understand',
+      'privacy-label':'Legal',
+      'privacy-title':'Privacy Policy',
+      'privacy-h1':'Who is responsible?',
+      'privacy-p1':'Kystens Kafé, Handelsparken Sortland, Sjøgata 30, 8400 Sortland. Contact: kontakt@kystenskafe.no',
+      'privacy-h2':'What data do we collect?',
+      'privacy-p2':'Through the reservation form we collect name, phone number, desired date and number of people. This is used only to confirm table reservations and is deleted after the reservation is completed.',
+      'privacy-h3':'Cookies',
+      'privacy-p3':'The website uses Google Fonts for typography and Google Maps for map display. These services may store cookies from Google.',
+      'privacy-h4':'Your rights',
+      'privacy-p4':'You have the right to access, correct and delete your personal data. Contact us at kontakt@kystenskafe.no and we will help you.',
+      'privacy-h5':'Last updated',
+      'privacy-p5':'June 2026',
+      'family-label':'Family-friendly',
+      'family-title':'For families with children',
+      'family-sub':'We warmly welcome everyone — young and old. With us there is plenty of space and a great atmosphere for the whole family.',
+      'family-h1':'Play area',
+      'family-t1':'We have a small dedicated play area with tables and benches, drawing supplies and Lego — so the little ones have something to do while you relax.',
+      'family-h2':'Practical information',
+      'family-t2':'We have high chairs and plenty of space for prams. Need to heat up brought food or a bottle? Just ask — we\'re happy to help.',
+      'family-h3':'Something for the kids',
+      'family-t3':'We have authentic Italian ice cream from IL Primo with over 11 flavours, as well as ice cream cups and spaghetti ice cream — a favourite with the youngest guests.',
+      'family-h4':'Changing table',
+      'family-t4':'We have a changing table available — so you can take care of the little ones without having to leave the café. Ask the staff and we will help you.',
+      'family-footer':'Kystens Kafé is a place for the whole family. Bring the kids, relax, and let us take care of the rest. ☕',
+      'dream-badge-line1':'year',
+      'dream-badge-line2':'dream',
     }
   };
 
@@ -1076,7 +1157,7 @@
     'mob-menu':'Speisekarte','mob-story':'Über uns','mob-gallery':'Galerie','mob-reservasjon':'Tisch reservieren','mob-takeaway':'Takeaway bestellen','mob-contact':'Finden Sie uns',
     'hero-eyebrow':'Kystens Kafé · Sortland','hero-title':'Geschmack der Küste','hero-sub':'Frisch zubereitetes Essen und Kaffee im Herzen von Vesterålen.','hero-btn-menu':'Speisekarte ansehen','hero-btn-takeaway':'Takeaway bestellen',
     'hi-label':'Was wir anbieten','hi-title':'Für jeden Geschmack etwas','hi-sub':'Wir machen alles mit Liebe und frischen Zutaten. Ob Kaffee, ein herzhaftes Mittagessen oder etwas Süßes — Sie sind immer herzlich willkommen.','hi-family':'Familienfreundlich',
-    'hi-chip-1':'Neu!','hi-h-1':'Neue Kaffeemaschine','hi-t-1':'Wir haben gerade in eine brandneue Kaffeemaschine investiert — was noch besseren Kaffee für Sie bedeutet. Kommen Sie herein und schmecken Sie den Unterschied selbst!',
+    'hi-chip-1':'Neu!','hi-h-1':'Neue Kaffeemaschine','hi-t-1':'Wir haben gerade in eine brandneue Kaffeemaschine investiert — das bedeutet noch besseren Kaffee für Sie. Kommen Sie herein und schmecken Sie selbst den Unterschied!',
     'hi-chip-2':'Täglich frisch','hi-h-2':'Frisches Gebäck','hi-t-2':'Croissants, Focaccia, Brötchen und Hörnchen — gebacken und gefüllt mit den feinsten Zutaten. Täglich frisch geliefert.',
     'hi-chip-3':'Italienische Qualität','hi-h-3':'Kuchen & Eis','hi-t-3':'Hausgemachte Kuchen und authentisches italienisches Eis von IL Primo — nach originalen italienischen Rezepten mit 11 Geschmackssorten.',
     'hi-h-4':'Für Familien mit Kindern','hi-t-4':'Spielbereich, Hochstühle, Wickeltisch und viel Platz für Kinderwagen — wir haben an die ganze Familie gedacht.',
@@ -1135,6 +1216,46 @@
     'fl-link-menu':'Speisekarte','fl-link-story':'Über uns','fl-link-res':'Tisch reservieren','fl-link-tb':'Feedback','fl-link-contact':'Kontakt',
     'fl-hours-weekday':'Mo–Fr   10:00 – 19:00','fl-hours-weekend':'Sa   10:00 – 16:00','fl-hours-sunday':'So   Geschlossen',
     'fl-copyright':'© 2026 Kystens Kafé. Alle Rechte vorbehalten.','fl-heart':'Mit ❤ gemacht in Sortland, Nordland',
+    'hi-chip-family':'Familienfreundlich',
+    'hi-h-family':'Für Familien mit Kindern',
+    'hi-t-family':'Spielbereich, Kinderstühle, Wickeltisch und viel Platz für Kinderwagen — wir haben an die ganze Familie gedacht.',
+    'gallery-hint':'← Wischen oder scrollen Sie für mehr →',
+    'tb2-label':'Ihre Meinung',
+    'tb2-title':'Wie war Ihr Besuch?',
+    'tb2-btn':'Feedback hinterlassen →',
+    'tb2-note':'Dauert ca. 1 Minute — völlig anonym',
+    'fl-link-tb-footer':'Geben Sie uns Feedback →',
+    'fl-link-privacy':'Datenschutz',
+    'toggle-btn-hide':'Foto ausblenden',
+    'cookie-text':'Wir verwenden Cookies von Google (Maps und Fonts) für das beste Erlebnis. Durch die Nutzung der Seite stimmen Sie dem zu.',
+    'cookie-link':'Datenschutzerklärung lesen →',
+    'cookie-btn':'Ich verstehe',
+    'privacy-label':'Rechtliches',
+    'privacy-title':'Datenschutzerklärung',
+    'privacy-h1':'Wer ist verantwortlich?',
+    'privacy-p1':'Kystens Kafé, Handelsparken Sortland, Sjøgata 30, 8400 Sortland. Kontakt: kontakt@kystenskafe.no',
+    'privacy-h2':'Welche Daten erheben wir?',
+    'privacy-p2':'Über das Reservierungsformular erfassen wir Name, Telefonnummer, gewünschtes Datum und Personenzahl. Dies wird nur zur Bestätigung von Tischreservierungen verwendet und nach Abschluss der Reservierung gelöscht.',
+    'privacy-h3':'Cookies',
+    'privacy-p3':'Die Website verwendet Google Fonts für Typografie und Google Maps für die Kartenanzeige. Diese Dienste können Cookies von Google speichern.',
+    'privacy-h4':'Ihre Rechte',
+    'privacy-p4':'Sie haben das Recht auf Auskunft, Berichtigung und Löschung Ihrer personenbezogenen Daten. Kontaktieren Sie uns unter kontakt@kystenskafe.no und wir helfen Ihnen.',
+    'privacy-h5':'Zuletzt aktualisiert',
+    'privacy-p5':'Juni 2026',
+    'family-label':'Familienfreundlich',
+    'family-title':'Für Familien mit Kindern',
+    'family-sub':'Wir heißen alle herzlich willkommen — Groß und Klein. Bei uns gibt es viel Platz und eine tolle Atmosphäre für die ganze Familie.',
+    'family-h1':'Spielbereich',
+    'family-t1':'Wir haben einen kleinen eigenen Spielbereich mit Tischen und Bänken, Malmaterial und Lego — damit die Kleinen beschäftigt sind, während Sie sich entspannen.',
+    'family-h2':'Praktische Informationen',
+    'family-t2':'Wir haben Kinderstühle und viel Platz für Kinderwagen. Müssen Sie mitgebrachtes Essen oder eine Flasche erwärmen? Fragen Sie einfach — wir helfen gerne.',
+    'family-h3':'Etwas für die Kinder',
+    'family-t3':'Wir haben echtes italienisches Eis von IL Primo mit über 11 Sorten, sowie Eisbecher und Spaghettieis — ein Favorit bei den Jüngsten.',
+    'family-h4':'Wickeltisch',
+    'family-t4':'Wir haben einen Wickeltisch verfügbar — damit Sie sich um die Kleinen kümmern können, ohne das Café verlassen zu müssen. Fragen Sie das Personal und wir helfen Ihnen.',
+    'family-footer':'Kystens Kafé ist ein Ort für die ganze Familie. Bringen Sie die Kinder mit, entspannen Sie sich und lassen Sie uns den Rest erledigen. ☕',
+    'dream-badge-line1':'Jahre',
+    'dream-badge-line2':'Traum',
   };
 
   function applyLang(lang) {
@@ -1220,11 +1341,8 @@
   font-size: 13px;
   border-top: 2px solid var(--terra);">
   <p style="margin:0;max-width:700px;line-height:1.6;">
-    Vi bruker informasjonskapsler fra Google (Maps og Fonts) 
-    for å gi deg den beste opplevelsen. Ved å bruke siden 
-    godtar du dette. 
-    <a href="#" onclick="openPersonvernModal(); return false;" 
-    style="color:var(--teal);text-decoration:underline;">
+    <span data-i18n="cookie-text">Vi bruker informasjonskapsler fra Google (Maps og Fonts) for å gi deg den beste opplevelsen. Ved å bruke siden godtar du dette.</span> <a href="#" onclick="openPersonvernModal(); return false;"
+    style="color:var(--teal);text-decoration:underline;" data-i18n="cookie-link">
     Les personvernerklæringen →</a>
   </p>
   <button onclick="acceptCookies()" style="
@@ -1237,7 +1355,7 @@
     font-size: 13px;
     font-weight: 700;
     cursor: pointer;
-    white-space: nowrap;">
+    white-space: nowrap;" data-i18n="cookie-btn">
     Jeg forstår
   </button>
 </div>
@@ -1246,39 +1364,39 @@
     <button class="modal-close" 
     onclick="closePersonvernModal()" 
     aria-label="Lukk">✕</button>
-    <p class="s-label">Juridisk</p>
-    <h2 class="s-title" style="margin-bottom:14px;">
+    <p class="s-label" data-i18n="privacy-label">Juridisk</p>
+    <h2 class="s-title" style="margin-bottom:14px;" data-i18n="privacy-title">
     Personvernerklæring</h2>
     <div style="font-size:15px;color:var(--text-lt);
     line-height:1.85;">
       <h3 style="font-size:18px;color:var(--charcoal);
-      margin:24px 0 8px;">Hvem er ansvarlig?</h3>
-      <p>Kystens Kafé, Handelsparken Sortland, 
-      Sjøgata 30, 8400 Sortland. 
+      margin:24px 0 8px;" data-i18n="privacy-h1">Hvem er ansvarlig?</h3>
+      <p data-i18n="privacy-p1">Kystens Kafé, Handelsparken Sortland,
+      Sjøgata 30, 8400 Sortland.
       Kontakt: kontakt@kystenskafe.no</p>
 
       <h3 style="font-size:18px;color:var(--charcoal);
-      margin:24px 0 8px;">Hvilke data samler vi inn?</h3>
-      <p>Via reservasjonsskjemaet samler vi inn navn, 
-      telefonnummer, ønsket dato og antall personer. 
-      Dette brukes kun for å bekrefte bordreservasjoner 
+      margin:24px 0 8px;" data-i18n="privacy-h2">Hvilke data samler vi inn?</h3>
+      <p data-i18n="privacy-p2">Via reservasjonsskjemaet samler vi inn navn,
+      telefonnummer, ønsket dato og antall personer.
+      Dette brukes kun for å bekrefte bordreservasjoner
       og slettes etter at reservasjonen er gjennomført.</p>
 
       <h3 style="font-size:18px;color:var(--charcoal);
-      margin:24px 0 8px;">Informasjonskapsler</h3>
-      <p>Nettsiden bruker Google Fonts for typografi og 
-      Google Maps for kartvisning. Disse tjenestene kan 
+      margin:24px 0 8px;" data-i18n="privacy-h3">Informasjonskapsler</h3>
+      <p data-i18n="privacy-p3">Nettsiden bruker Google Fonts for typografi og
+      Google Maps for kartvisning. Disse tjenestene kan
       lagre informasjonskapsler fra Google.</p>
 
       <h3 style="font-size:18px;color:var(--charcoal);
-      margin:24px 0 8px;">Dine rettigheter</h3>
-      <p>Du har rett til innsyn i, retting av og sletting 
-      av dine personopplysninger. Ta kontakt på 
+      margin:24px 0 8px;" data-i18n="privacy-h4">Dine rettigheter</h3>
+      <p data-i18n="privacy-p4">Du har rett til innsyn i, retting av og sletting
+      av dine personopplysninger. Ta kontakt på
       kontakt@kystenskafe.no så hjelper vi deg.</p>
 
       <h3 style="font-size:18px;color:var(--charcoal);
-      margin:24px 0 8px;">Sist oppdatert</h3>
-      <p>Juni 2026</p>
+      margin:24px 0 8px;" data-i18n="privacy-h5">Sist oppdatert</h3>
+      <p data-i18n="privacy-p5">Juni 2026</p>
     </div>
   </div>
 </div>
